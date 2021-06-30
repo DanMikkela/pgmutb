@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Bic6k1koB4vus9qLTt1zqujtQUDcrzNdWoDs3ydeTAY+te5+44lEy0nCxBgYfhKNYy0ZQSkWX6Sqd4TJY6tgyw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\dan\\PgmUtb\\C#\\ConsoleApp3\\ConsoleApp3\\ConsoleApp3.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dan\\.nuget\\packages\\csvhelper\\27.1.1\\csvhelper.27.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}

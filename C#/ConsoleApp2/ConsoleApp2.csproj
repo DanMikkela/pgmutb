@@ -1,0 +1,87 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{C31A2F4C-72DB-40C4-8482-6CFC6F6A6CED}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>ConsoleApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>ConsoleApp3</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".vs\ConsoleApp2\DesignTimeBuild\.dtbcache.v2" />
+    <None Include=".vs\ConsoleApp2\v16\.suo" />
+    <None Include="ConsoleApp2\bin\Debug\net5.0\ConsoleApp2.deps.json" />
+    <None Include="ConsoleApp2\bin\Debug\net5.0\ConsoleApp2.runtimeconfig.dev.json" />
+    <None Include="ConsoleApp2\bin\Debug\net5.0\ConsoleApp2.runtimeconfig.json" />
+    <None Include="ConsoleApp2\ConsoleApp2.csproj" />
+    <None Include="ConsoleApp2\obj\ConsoleApp2.csproj.nuget.dgspec.json" />
+    <None Include="ConsoleApp2\obj\ConsoleApp2.csproj.nuget.g.props" />
+    <None Include="ConsoleApp2\obj\ConsoleApp2.csproj.nuget.g.targets" />
+    <None Include="ConsoleApp2\obj\Debug\net5.0\ConsoleApp2.AssemblyInfoInputs.cache" />
+    <None Include="ConsoleApp2\obj\Debug\net5.0\ConsoleApp2.assets.cache" />
+    <None Include="ConsoleApp2\obj\Debug\net5.0\ConsoleApp2.csproj.AssemblyReference.cache" />
+    <None Include="ConsoleApp2\obj\Debug\net5.0\ConsoleApp2.csproj.CoreCompileInputs.cache" />
+    <None Include="ConsoleApp2\obj\Debug\net5.0\ConsoleApp2.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="ConsoleApp2\obj\Debug\net5.0\ConsoleApp2.genruntimeconfig.cache" />
+    <None Include="ConsoleApp2\obj\project.assets.json" />
+    <None Include="ConsoleApp2\obj\project.nuget.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConsoleApp2\obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" />
+    <Compile Include="ConsoleApp2\obj\Debug\net5.0\ConsoleApp2.AssemblyInfo.cs" />
+    <Compile Include="ConsoleApp2\Produkt.cs" />
+    <Compile Include="ConsoleApp2\Program.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ConsoleApp2\bin\Debug\net5.0\ConsoleApp2.dll" />
+    <Content Include="ConsoleApp2\bin\Debug\net5.0\ConsoleApp2.exe" />
+    <Content Include="ConsoleApp2\bin\Debug\net5.0\ConsoleApp2.pdb" />
+    <Content Include="ConsoleApp2\bin\Debug\net5.0\ref\ConsoleApp2.dll" />
+    <Content Include="ConsoleApp2\obj\Debug\net5.0\apphost.exe" />
+    <Content Include="ConsoleApp2\obj\Debug\net5.0\ConsoleApp2.csproj.FileListAbsolute.txt" />
+    <Content Include="ConsoleApp2\obj\Debug\net5.0\ConsoleApp2.dll" />
+    <Content Include="ConsoleApp2\obj\Debug\net5.0\ConsoleApp2.pdb" />
+    <Content Include="ConsoleApp2\obj\Debug\net5.0\ref\ConsoleApp2.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".vs\ConsoleApp3\v16\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
