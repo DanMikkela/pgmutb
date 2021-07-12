@@ -1,0 +1,24 @@
+\\Mac\Home\Easit AB\Academy 2019 - General\Kursmaterial\Kursmaterial C# Sommaren 2019\ADO.NET\Bloggy.Demo\bin\Debug\netcoreapp2.1\Bloggy.Demo.deps.json
+\\Mac\Home\Easit AB\Academy 2019 - General\Kursmaterial\Kursmaterial C# Sommaren 2019\ADO.NET\Bloggy.Demo\bin\Debug\netcoreapp2.1\Bloggy.Demo.runtimeconfig.json
+\\Mac\Home\Easit AB\Academy 2019 - General\Kursmaterial\Kursmaterial C# Sommaren 2019\ADO.NET\Bloggy.Demo\bin\Debug\netcoreapp2.1\Bloggy.Demo.runtimeconfig.dev.json
+\\Mac\Home\Easit AB\Academy 2019 - General\Kursmaterial\Kursmaterial C# Sommaren 2019\ADO.NET\Bloggy.Demo\bin\Debug\netcoreapp2.1\Bloggy.Demo.dll
+\\Mac\Home\Easit AB\Academy 2019 - General\Kursmaterial\Kursmaterial C# Sommaren 2019\ADO.NET\Bloggy.Demo\bin\Debug\netcoreapp2.1\Bloggy.Demo.pdb
+\\Mac\Home\Easit AB\Academy 2019 - General\Kursmaterial\Kursmaterial C# Sommaren 2019\ADO.NET\Bloggy.Demo\obj\Debug\netcoreapp2.1\Bloggy.Demo.csprojAssemblyReference.cache
+\\Mac\Home\Easit AB\Academy 2019 - General\Kursmaterial\Kursmaterial C# Sommaren 2019\ADO.NET\Bloggy.Demo\obj\Debug\netcoreapp2.1\Bloggy.Demo.AssemblyInfoInputs.cache
+\\Mac\Home\Easit AB\Academy 2019 - General\Kursmaterial\Kursmaterial C# Sommaren 2019\ADO.NET\Bloggy.Demo\obj\Debug\netcoreapp2.1\Bloggy.Demo.AssemblyInfo.cs
+\\Mac\Home\Easit AB\Academy 2019 - General\Kursmaterial\Kursmaterial C# Sommaren 2019\ADO.NET\Bloggy.Demo\obj\Debug\netcoreapp2.1\Bloggy.Demo.csproj.CoreCompileInputs.cache
+\\Mac\Home\Easit AB\Academy 2019 - General\Kursmaterial\Kursmaterial C# Sommaren 2019\ADO.NET\Bloggy.Demo\obj\Debug\netcoreapp2.1\Bloggy.Demo.dll
+\\Mac\Home\Easit AB\Academy 2019 - General\Kursmaterial\Kursmaterial C# Sommaren 2019\ADO.NET\Bloggy.Demo\obj\Debug\netcoreapp2.1\Bloggy.Demo.pdb
+\\Mac\Home\Easit AB\Academy 2019 - General\Kursmaterial\Kursmaterial C# Sommaren 2019\ADO.NET\Bloggy.Demo\obj\Debug\netcoreapp2.1\Bloggy.Demo.genruntimeconfig.cache
+C:\Users\dan\PgmUtb\C#\Bloggy.Demo\bin\Debug\netcoreapp2.1\Bloggy.Demo.deps.json
+C:\Users\dan\PgmUtb\C#\Bloggy.Demo\bin\Debug\netcoreapp2.1\Bloggy.Demo.runtimeconfig.json
+C:\Users\dan\PgmUtb\C#\Bloggy.Demo\bin\Debug\netcoreapp2.1\Bloggy.Demo.runtimeconfig.dev.json
+C:\Users\dan\PgmUtb\C#\Bloggy.Demo\bin\Debug\netcoreapp2.1\Bloggy.Demo.dll
+C:\Users\dan\PgmUtb\C#\Bloggy.Demo\bin\Debug\netcoreapp2.1\Bloggy.Demo.pdb
+C:\Users\dan\PgmUtb\C#\Bloggy.Demo\obj\Debug\netcoreapp2.1\Bloggy.Demo.csproj.AssemblyReference.cache
+C:\Users\dan\PgmUtb\C#\Bloggy.Demo\obj\Debug\netcoreapp2.1\Bloggy.Demo.AssemblyInfoInputs.cache
+C:\Users\dan\PgmUtb\C#\Bloggy.Demo\obj\Debug\netcoreapp2.1\Bloggy.Demo.AssemblyInfo.cs
+C:\Users\dan\PgmUtb\C#\Bloggy.Demo\obj\Debug\netcoreapp2.1\Bloggy.Demo.csproj.CoreCompileInputs.cache
+C:\Users\dan\PgmUtb\C#\Bloggy.Demo\obj\Debug\netcoreapp2.1\Bloggy.Demo.dll
+C:\Users\dan\PgmUtb\C#\Bloggy.Demo\obj\Debug\netcoreapp2.1\Bloggy.Demo.pdb
+C:\Users\dan\PgmUtb\C#\Bloggy.Demo\obj\Debug\netcoreapp2.1\Bloggy.Demo.genruntimeconfig.cache
