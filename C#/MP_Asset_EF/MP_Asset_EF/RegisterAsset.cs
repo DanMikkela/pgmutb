@@ -17,6 +17,7 @@ namespace MP_Asset_EF
             string input = "";
             int tmp;
             bool contStatus = true;
+            Console.Clear();
             Console.WriteLine("Valbara Kontor : ");
             for (int i=0; i < kontor.Count; i++)
             {
@@ -27,6 +28,8 @@ namespace MP_Asset_EF
                 Console.WriteLine("\n");
             }
 
+            Console.Write("Vill du Skapa/uppdatera eller Ta bort ? : ");
+            ConsoleKey cmd = Console.ReadKey(true).Key;
             contStatus = true;
             Office of = new Office();
             while (contStatus)                                                           //  inmatningsloop Kontor
@@ -43,10 +46,14 @@ namespace MP_Asset_EF
                     continue;
                 }
                 // 
+                //if (cmd == ConsoleKey.T)
+                //{
+                //    db.Remove(of);
+                //    break;
+                //}
                 art.OfficeId = idKontor;
                 contStatus = false;
                 }
-
             contStatus = true;
             while (contStatus)                                                               //  inmatningsloop Gemensam - inköpsdatum
             {                                                                                //  med validering

@@ -1,0 +1,26 @@
+<script language="JavaScript">
+<!--
+var timeID = 0
+var Count = 0;
+var Total_count=1
+var m1 = "     "
+var m2 = "Du missar väl inte vår utställning i Ystad 14-15 november ?!  Glöm inte att anmäla Dina katter!!"
+var m3 = "     "
+var Text = m1+m2+m3
+function scroller_m4() {
+window.status = Text.substring (Count, Text.length) + Text.substring (0, Count)
+if (Count < Text.length)
+    Count++;
+    else if (Count == Text.length) {
+             Total_count++;
+             Count=0;
+             }
+           else
+    Count=0;
+    if (Total_count != 100) setTimeout("scroller_m4()", 68)
+    }
+function delay() {
+clearTimeout()
+}
+// -->
+</script>

@@ -108,8 +108,8 @@ namespace MP_Asset_EF
                     Console.WriteLine("\n");
                 }
             }
-            Console.WriteLine("\nTryck enter för meny");
-            Console.ReadLine();
+            //Console.WriteLine("\nTryck enter för meny");
+            //Console.ReadLine();
         }
 
         public static void Offices(MpContext db, string formatting)
@@ -127,8 +127,8 @@ namespace MP_Asset_EF
                     Console.WriteLine("\n");
                 }
             }
-            Console.WriteLine("\nTryck enter för meny");
-            Console.ReadLine();
+            //Console.WriteLine("\nTryck enter för meny");
+            //Console.ReadLine();
 
         }
     }

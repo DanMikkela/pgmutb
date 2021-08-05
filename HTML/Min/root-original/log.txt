@@ -1,0 +1,7 @@
+2005-01-12 20:41	Inloggning av medlem 97	ok
+2007-03-28 23:18	Inloggning av medlem 1	ok
+2007-03-28 23:18	Utloggning av medlem 1
+2007-03-28 23:18	Inloggning av medlem 2	ok
+2007-04-17 21:55	Inloggning av medlem 2	ok
+2007-04-17 21:56	Utloggning av medlem 2
+2007-04-27 07:37	Fel inloggning av medlem 		193.10.249.98

@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello React!</title>
+		<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+		<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+		<script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+		<LINK REL="stylesheet" HREF="fashion.css" TYPE="TEXT/CSS">
+		<script language="JavaScript" src="./fashion.js"></script>
+  </head>
+  <body>
+		<!--
+			This is HTML. HTML is displayed in the browser. If we open this file in a 
+			browser we will see the text "Starting React!" displayed.
+			
+			In the file index1.html we will look at how this can be achieved with React.
+		-->
+		<div id="header"></div>
+		<div id="main"></div>
+		<div id="footer"></div>
+		
+		
+		
+		<script type="text/babel">
+			let PriceReduction = () => {
+
+			}
+		
+			function Header(){
+				return <h1 align="center">Best Fashion Store</h1>;
+			}
+			
+			function Product( props ){
+				return (
+					<div id="prodtabell">
+						<div class="prod">
+							<div id="name">{props.productName}</div>
+							<div id="price">{props.price}</div>
+							<a href={props.link}>Click here for more information</a>
+						</div>
+					</div>
+				);
+			}
+			
+			function Main(){
+				return (
+					<div>
+						<h2>Our Nicest Clothes</h2>
+						<h3>Summer Clothes</h3>
+						<div id="summer">
+							<Product productName="Blue T-shirt" price="399.00" link="https://blocket.se" />
+							<Product productName="Yellow Socks" price="299.00" link="https://blocket.se" />
+							<Product productName="Green Shorts" price="499.00" link="https://blocket.se" />
+						</div>
+						<div>Winter Clothes</div>
+					</div>
+				);
+			}
+			
+			function Footer(){
+				return (
+					<div id="footer">
+						<div id="Categories">Categories</div>
+						<div id="Contact">Contact Us</div>
+						<div id="rating">Ratings: Five stars!</div>
+					</div>
+				);
+			}
+			
+			function App(){
+				return(
+					<div>
+						<Header />
+						<Main />
+						<Footer />
+					</div>
+				);
+			}
+			
+
+			ReactDOM.render( <Header />, document.getElementById("header") );
+			ReactDOM.render( <Main />, document.getElementById("main") );
+			ReactDOM.render( <Footer />, document.getElementById("footer") );
+			
+		</script>
+  </body>
+</html>

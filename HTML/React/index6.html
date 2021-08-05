@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+		<!--
+			Producer: Techlyceum.com
+			Subject: Pass function with props.
+		-->
+    <title>Hello React! Send Function With Props!</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>			<!-- React -->
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>	<!-- React DOM -->
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>			<!-- babel interpreter-->
+  </head>
+
+  <body>
+    <div id="root"></div>
+		<script type="text/babel">														/* JSX översätts med hjälp av babel */
+										
+			const MainComponent = () => {												/* Huvudmodulen ska anropa submodul A som räknar antal klick på knappen, 
+																						får tillbaka räknaren, som därefter skickas datan till submodul B     */
+				const [ data, setData ] = React.useState(0);							/* skapa variabel "data" i MainComponent_State */
+				
+				function updateData( newData ){											/* spara parametern "newData" i MainComponent_State_data */
+				/*	console.log("newData: " + newData); */ 								/* felsökning */
+					setData( newData );
+				}
+				
+				return (																/* att visa på skärmen */
+					<div>
+						<SubComponentA 													/* anropar submodul A med 2 parametrar, text + funktionsreferens */
+							displayThis="Text supplied from the parent component." 
+							runThis={updateData}										/*  */
+						/>
+						<div>Sub A : Data from Main: {data}</div>
+						<SubComponentB													/* anropar submodul B med 1 parameter, MainComponent_State_data */
+							numberOfClicks={data} />
+					</div>
+				);
+			}
+
+			const SubComponentA = (props) => {											/*  */
+				const [ clicks, setClicks ] = React.useState(0);
+				
+				function updateClicks(){												/*  */
+					setClicks( clicks + 1 );											/* OBS! uppdateringen av State buffras!  */
+				/*	console.log("clicks: " + clicks); */ 								/* felsökning */
+				}
+																						/*  */
+				function updateMainComponent(){											/* läggs som en egen function för att skapa en fördröjning */
+					props.runThis(clicks);												/* kan inte läggas direkt efter "setClicks" ovan */
+				}
+				
+				React.useEffect( updateMainComponent );									/* useEffect "väntar in" föregående async kommandos slut */
+				
+				return (																/* att visa på skärmen */
+					<div>
+						Sub A : {props.displayThis}												
+						<p><button onClick={updateClicks}>Click me</button></p>
+						<div>Clicks in Sub A: {clicks}</div>
+					</div>
+				);
+			}
+			
+			const SubComponentB = (props) => {											/* submodul B, ska ta emot och visa räknaren som uppdateras av sub A */
+				return (																/* att visa på skärmen */
+					<div>Sub B : Data from Main supplied by Sub A : {props.numberOfClicks}</div>
+						);
+			}
+																						/* ok. lägg ut på skärmen genom att "rendera" huvudmodulen */
+			const r = document.getElementById('root');
+			ReactDOM.render( <MainComponent /> , r );
+			
+    </script>
+  </body>
+</html>

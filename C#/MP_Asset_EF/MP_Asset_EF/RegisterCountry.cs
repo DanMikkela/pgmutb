@@ -18,7 +18,7 @@ namespace MP_Asset_EF
             while (true)
             {
                 int existCountry = 1;
-
+                Console.Clear();
                 Console.WriteLine("\n** Skapar/Uppdaterar Land **\n");
                 Skrivut.Countries(db, "VL");
                 // dags för valutakoden

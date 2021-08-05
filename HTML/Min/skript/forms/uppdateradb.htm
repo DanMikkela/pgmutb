@@ -1,0 +1,161 @@
+<HTML>
+<HEAD>
+  <LINK REL='stylesheet' HREF='../../min.css' TYPE='TEXT/CSS'>
+</HEAD>
+<BODY>
+	<FORM method='get' action='uppd.php?tab=uppd&next=uppdateradb.htm'>
+  <INPUT name=tab type=hidden value='uppd'>
+  <INPUT name=next type=hidden value='uppdateradb.htm'>
+  Du kan här lägga in sidor som uppdaterats (tabell : uppdaterat)<br>
+  Ange datum (YYYY-MM-DD) :&nbsp;<INPUT name=datum size='10'><br>
+  Namn på sidan :&nbsp;<INPUT name=sida size='40'><br>
+  URL till sidan :&nbsp;<INPUT name=url size='40'><br>
+  <INPUT type=submit value='Skicka'>
+</FORM>
+<HR>
+<FORM method='get' action='uppd.php?tab=medl&next=uppdateradb.htm'>
+  <INPUT name=tab type=hidden value='medl'>
+  <INPUT name=next type=hidden value='uppdateradb.htm'>
+  Du kan här lägga in nya medlemmar (tabell : medlem)<br>
+  Medlemstyp (HM/FM) :&nbsp;<INPUT name=typ size='4'><br>
+  Medlemsnummer :&nbsp;<INPUT name=nr size='5'><br>
+  Förnamn :&nbsp;<INPUT name=fnamn size='30'><br>
+  Efternamn :&nbsp;<INPUT name=enamn size='30'><br>
+  Adress :&nbsp;<INPUT name=adr size='30'><br>
+  Postnummer :&nbsp;<INPUT name=pnr size='7'><br>
+  Ort :&nbsp;<INPUT name=ort size='22'><br>
+  Telefon :&nbsp;<INPUT name=tfn size='22'><br>
+  E-post :&nbsp;<INPUT name=epost size='40'><br>
+  Webkod :&nbsp;<INPUT name=webkod size='15'><br>
+  Behörighet :&nbsp;<INPUT name=behörighet size='3'><br>
+  Medlem sedan :&nbsp;<INPUT name=webkod size='15'><br>
+  Huvudmedlem (om FM) :&nbsp;<INPUT name=behörighet size='5'><br>
+  <INPUT type=submit value='Skicka'>
+</FORM>
+<HR>
+<FORM method='get' action='uppd.php?tab=stam&next=uppdateradb.htm'>
+  <INPUT name=tab type=hidden value='stam'>
+  <INPUT name=next type=hidden value='uppdateradb.htm'>
+  Du kan här lägga in nya stamnamn (tabell : stamnamn)<br>
+  Prefix (S* default) :&nbsp;<INPUT name=prefix size='4'><br>
+  Stamnamn :&nbsp;<INPUT name=namn size='40'><br>
+  Huvudinnehavare (namn) :&nbsp;<INPUT name=inneh size='40'><br>
+  Medinnehavare (namn) :&nbsp;<INPUT name=medinneh size='40'><br>
+  Registreringsdatum :&nbsp;<INPUT name=inneh size='15'><br>
+  E-post :&nbsp;<INPUT name=epost size='40'><br>
+  Hemsida :&nbsp;<INPUT name=hemsida size='40'><br>
+  Huvudinnehavare (nr) :&nbsp;<INPUT name=medlem size='40'><br>
+  Medinnehavare (nr) :&nbsp;<INPUT name=medlem2 size='40'><br>
+  Aktiv medlem i Min :&nbsp;
+  <INPUT name=aktiv size='3'><br>
+  <INPUT type=submit value='Skicka'>
+</FORM>
+<HR>
+<SCRIPT LANGUAGE="JavaScript">
+  function verify_funk() {
+	switch (document.funktion.befattning.value) {
+		case "Ordförande":	 document.funktion.kortbef.value = "ordf"; break;
+		case "Vice Ordförande":	document.funktion.kortbef.value = "v.ordf"; break;
+		case "Sekreterare":	document.funktion.kortbef.value = "sekr"; break;
+		case "Utställningssekreterare":	document.funktion.kortbef.value = "utst.sekr"; break;
+		case "Ledamot":	document.funktion.kortbef.value = "led."; break;
+		case "Kassör":	document.funktion.kortbef.value = "kassör"; break;
+		case "PR":	document.funktion.kortbef.value = "pr"; break;
+		case "Webbansvarig": document.funktion.kortbef.value = "webbie"; break;
+		case "Redaktör":	document.funktion.kortbef.value = "red."; break;
+		case "Revisor":	document.funktion.kortbef.value = "revisor"; 
+    }
+  }
+ </SCRIPT>
+
+<FORM name=funktion method='get' action='uppd.php' onSubmit="verify_funk();">
+  <INPUT name=tab type=hidden value='funk'>
+  <INPUT name=next type=hidden value='uppdateradb.htm'>
+  Du kan här lägga in nya funktionärer (tabell : funktionär)<br>
+  <INPUT name=id size='3' type=hidden><br>
+  ordning inom funktion :&nbsp;<INPUT name=ordn size='3'>&nbsp;(visning)<br>
+  funktion :&nbsp;
+  <SELECT name=funktion>
+    <OPTION value='Styrelsen'>Styrelsen
+    <OPTION value='PR'>PR
+    <OPTION value='Webben'>Webben
+    <OPTION value='KattenMin'>Katten Min
+    <OPTION value='Revisorer'>Revisorer
+  </SELECT>
+  <br>
+  befattning :&nbsp;
+  <SELECT name=befattning>
+    <OPTION value='Ordförande'>Ordförande
+    <OPTION value='Vice Ordförande'>Vice Ordförande
+    <OPTION value='Sekreterare'>Sekreterare
+    <OPTION value='Utställningssekreterare'>Utställningssekreterare
+    <OPTION value='Ledamot'>Ledamot
+    <OPTION value='Kassör'>Kassör
+    <OPTION value='PR'>PR
+    <OPTION value='Webbansvarig'>Webbansvarig
+    <OPTION value='Redaktör'>Redaktör
+    <OPTION value='Revisor'>Revisor
+  </SELECT>
+  <INPUT name=kortbef size='10' type=hidden><br>
+  medlemsnummer :&nbsp;<INPUT name=medlemsnr size='4'><br>
+  epost (*.min@kattklubb.se) :&nbsp;
+  <SELECT name=epost>
+    <OPTION value='ordf.min@kattklubb.se'>Ordförande
+    <OPTION value='sekr.min@kattklubb.se'>Sekreterare
+    <OPTION value='utstsekr.min@kattklubb.se'>Utställningssekreterare
+    <OPTION value='kassor.min@kattklubb.se'>Kassör
+    <OPTION value='pr.min@kattklubb.se'>PR
+    <OPTION value='webb.min@kattklubb.se'>Webbansvarig
+    <OPTION value='redaktion.min@kattklubb.se'>Redaktör
+    <OPTION value='revisor.min@kattklubb.se'>Revisor
+  </SELECT><br>
+  <INPUT type=submit value='Skicka'>
+</FORM>
+<HR>
+<FORM method='POST' action='uppd.php?sänd=1&next=uppdateradb.htm'>
+  <INPUT name=tab type=hidden value='funk'>
+  <INPUT name=next type=hidden value='uppdateradb.htm'>
+  Du kan här lägga in sidor som uppdaterats (tabell : uppdaterat)<br>
+  Ange datum (YYYY-MM-DD) :&nbsp;<INPUT name=datum size='10'><br>
+  Namn på sidan :&nbsp;<INPUT name=sida size='40'><br>
+  URL till sidan :&nbsp;<INPUT name=url size='40'><br>
+  <INPUT type=submit value='Skicka'>
+</FORM>
+<HR>
+<FORM method='POST' action='uppd.php?sänd=1&next=uppdateradb.htm'>
+  <INPUT name=tab type=hidden value='funk'>
+  <INPUT name=next type=hidden value='uppdateradb.htm'>
+  Du kan här lägga in sidor som uppdaterats (tabell : uppdaterat)<br>
+  Ange datum (YYYY-MM-DD) :&nbsp;<INPUT name=datum size='10'><br>
+  Namn på sidan :&nbsp;<INPUT name=sida size='40'><br>
+  URL till sidan :&nbsp;<INPUT name=url size='40'><br>
+  <INPUT type=submit value='Skicka'>
+</FORM>
+<HR>
+<FORM method='POST' action='uppd.php?sänd=1&next=uppdateradb.htm'>
+  <INPUT name=tab type=hidden value='funk'>
+  <INPUT name=next type=hidden value='uppdateradb.htm'>
+  Du kan här lägga in sidor som uppdaterats (tabell : uppdaterat)<br>
+  Ange datum (YYYY-MM-DD) :&nbsp;<INPUT name=datum size='10'><br>
+  Namn på sidan :&nbsp;<INPUT name=sida size='40'><br>
+  URL till sidan :&nbsp;<INPUT name=url size='40'><br>
+  <INPUT type=submit value='Skicka'>
+</FORM>
+<HR>
+<FORM method='POST' action='uppd.php?sänd=1&next=uppdateradb.htm'>
+  <INPUT name=tab type=hidden value='funk'>
+  <INPUT name=next type=hidden value='uppdateradb.htm'>
+  Du kan här lägga in sidor som uppdaterats (tabell : uppdaterat)<br>
+  Ange datum (YYYY-MM-DD) :&nbsp;<INPUT name=datum size='10'><br>
+  Namn på sidan :&nbsp;<INPUT name=sida size='40'><br>
+  URL till sidan :&nbsp;<INPUT name=url size='40'><br>
+  <INPUT type=submit value='Skicka'>
+</FORM>
+<HR>
+
+</HTML>
+<?
+  exit;
+}
+?>
+

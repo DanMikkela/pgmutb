@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+		<!--
+			Producer: Techlyceum.com
+		-->
+    <title>Hello Lexicon React!</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+  </head>
+
+  <body>
+    <div id="top"></div>
+	<div id="root"></div>
+    <script type="text/babel">
+		
+		let MainComponent = () => {
+			const [inputValue, setInputValue] = React.useState("");
+			
+			let handleChange = ( e ) => {
+				console.log( e.target.value );
+				setInputValue( e.target.value );
+			}
+			
+			return(
+				<div>
+					<input type="text" onChange={handleChange} value={inputValue} />
+					<button>Click me</button>
+					<div>{inputValue}</div>
+				</div>
+			);
+		}
+		
+		const FormComponent = () => {
+			const [ firstName, setFirstName ] = React.useState("");
+			const [ lastName, setLastName ] = React.useState("");
+			
+			function handleChange( e ){
+				if( e.target.name == "firstName" ){
+					setFirstName(e.target.value);
+				}
+				else if( e.target.name == "lastName" ){
+					setLastName(e.target.value);
+				}
+			}
+			
+			return (
+				<div>
+					<form>
+						<input name="firstName" type="text" onChange={handleChange} />
+						<input name="lastName" type="text" onChange={handleChange} />
+						<input name="submitButton" type="submit" value="Click me" />
+					</form>
+					<div>{firstName}</div>
+					<div>{lastName}</div>
+				</div>
+			);
+		}
+		
+		const r = document.getElementById('top');
+		const s = document.getElementById('root');
+		ReactDOM.render(<MainComponent />, r);
+		ReactDOM.render(<FormComponent />, s);
+			
+    </script>
+  </body>
+</html>

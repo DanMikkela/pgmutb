@@ -16,14 +16,10 @@ namespace MP_Asset_EF
             while (true)
             {
                 bool existOffice = false;
+                Console.Clear();
 
                 Console.WriteLine("\n** Skapar/Uppdaterar Kontor **\n");
                 Skrivut.Countries(db, "VL");
-                //Console.WriteLine("Valbara Länder ");
-                //foreach (Country c in land)
-                //{
-                //    Console.Write( ": " + c.CurrencyCode);
-                //}
                 Console.Write("\nAnge Valutakod (xxx) : ");
                 string input = Console.ReadLine().Trim().ToUpper();
 

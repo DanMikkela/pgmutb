@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+    <script type="text/babel">      // JSX se rad 10
+        function MyComponent(){
+            return <h1>My First Function Component</h1>;
+        }
+
+        function Content( props ){
+            return (
+                <div>
+                    <p>gdgfgf " /t"{props.a}  </p>
+                    <p>fgfdgfd</p>
+                    <p>fdgdgd</p>
+                </div>   
+            )
+        }
+
+        let x = React.createElement("h1", {}, "Starting React!");
+        let r = document.getElementById("root");
+        ReactDOM.render( <Content a="bbbbb" />,r); 
+        /* ReactDOM.render( <MyComponent />,r); */
+
+    </script>
+</body>
+</html>

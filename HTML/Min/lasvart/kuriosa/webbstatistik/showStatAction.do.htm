@@ -1,0 +1,665 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>susnet - Statistik för din hemsida</title>
+
+
+  
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords" content="gratis, statistik, besöksräknare, online, onlineräknare, idag, besökare, blockera, ip, ställ in värde">
+<meta name="description" content="Gratis statisk och räknare till din hemsida. Besöksräknare, onlineräknare, besökare idag. Du kan blockera IP och ställa in värde på räknaren.">
+<meta name="robots" content="index, follow">
+<script type="text/javascript" src="showStatAction.do-filer/logger.js"></script>
+<style type="text/css">
+  @import url(../../../kuriosa/styles_old.css);
+  @import url(../../../kuriosa/webbstatistik/styles-service.css);
+</style>
+
+<script type="text/javascript">
+function openWindow(url) {
+window.open(url, "", "menubar=no, toolbar=no, location=no, resizable=yes, width=775, height=400, scrollbars=yes");
+}
+</script></head><body>
+<div id="site">
+
+  <div id="head"> 
+    <div id="headTop"> 
+      <div id="headMenu"> 
+        <div id="headMenuLeft" class="menu">
+		  <span class="headMenu"><a href="http://susnet.se/">Susnet</a></span>
+		  <span class="headMenu"><a href="">Tjänster</a></span> 
+          <span class="headMenu"><a href="http://www.recepten.se/">Recept</a></span>
+		  </div>
+      </div>
+      <div id="logga" class="menu"> <a class="image" href="http://susnet.se/tjanster" title="tjänster - första sidan"> 
+        <img src="showStatAction.do-filer/logga.jpg" title="susnet tjänster första sidan" alt="susnet logo" height="50" width="305"> 
+        </a> </div>
+    </div>
+    <div class="line">
+	  <span class="lineText"></span> 
+	  <span class="lineText">|</span> 
+      <span class="lineText"> medlemmar</span>
+	  <span class="lineText">|</span> 
+      <span class="lineText"> nya medlemmar idag</span> 
+	</div>
+  </div>
+  
+  <div id="main"> 
+    <div id="sidebarLeft">
+      <div id="menuTop">&nbsp;</div> 
+      <div id="menu"> 
+		<div class="menu">
+<div class="menuGroup">Information</div>
+<div class="menuItem"><a href="http://susnet.se/tjanster/newsAction.do">nyheter</a></div>
+<div class="menuItem"><a href="http://susnet.se/tjanster/menuInternalAction.do?menu=instructions">instruktioner</a></div>
+<div class="menuItem"><a href="http://susnet.se/tjanster/menuInternalAction.do?menu=troubleShooting">felsökning</a></div>
+<div class="menuItem"><a href="http://susnet.se/tjanster/menuInternalAction.do?menu=linkMeInternal">länka hit</a></div>
+<div class="menuItem"><a href="http://susnet.se/tjanster/menuInternalAction.do?menu=rulesInternal">regler</a></div>
+<div class="menuItem"><a href="http://susnet.se/tjanster/faqAction.do?action=internal">FAQ</a></div>
+<div class="menuItem"><a href="http://susnet.se/tjanster/contactShowInternalAction.do?action=show">kontakt</a></div>
+
+<div class="menuGroup">Presentation</div>
+<div class="menuParent">+ statistik</div>
+<div class="menuChild"><a href="http://susnet.se/tjanster/showStatAction.do?id=30026">Räknare 1</a></div>
+<div class="menuParent">+ loggar</div>
+<div class="menuChild"><a href="http://susnet.se/tjanster/showLogsAction.do?id=30026">Räknare 1</a></div>
+<div class="menuGroup">Inställningar</div>
+
+<div class="menuParent">+ mina koder</div>
+<div class="menuChild"><a href="http://susnet.se/tjanster/codesAction.do?id=30026">Räknare 1</a></div>
+<div class="menuParent">+ räknare</div>
+<div class="menuChild"><a href="http://susnet.se/tjanster/counterSettingsAction.do?id=30026">Räknare 1</a></div>
+<div class="menuItem"><a href="http://susnet.se/tjanster/userSettingsGetNameAndLogsAction.do?action=get">Mitt konto</a></div>
+
+<div class="menuGroup">Administration</div>
+<div class="menuItem"><a href="http://susnet.se/tjanster/menuInternalAction.do?menu=create">ny räknare</a></div>
+<div class="menuItem"><a href="http://susnet.se/tjanster/deleteCounterAction.do?action=show">ta bort räknare</a></div>
+</div>
+</div>
+      <div id="menuBottom">&nbsp;</div> 
+	  <div class="boxTitleLeft">
+  Logga ut
+</div>
+<div class="sidebarLeft"> 
+   <div class="sidebarText"> 
+     <form method="post" action="/tjanster/logoutAction.do">
+        Du är inloggad som: 
+	    <b>ThatsMe</b>
+		<input value="logga ut" class="button" type="submit"></form></div>
+</div>
+
+</div>
+  
+    <div id="sidebarRight">
+      <div class="boxTitleRight">Reklam</div>
+<div class="adSidebarRight">
+
+
+
+
+<div><br>
+          <a href="http://www.mmmedier.se/ads/m/bonnier_kom_ipheadset_2007_04/?pid=20137&amp;bid=4721" rel="nofollow" target="main"> 
+          <img src="showStatAction.do-filer/140x350_KOM_se_15kb.jpg" alt="mmmedier"> 
+          </a> <br>
+          <br>
+</div>
+
+
+<script type="text/javascript"><!--
+		google_ad_client = "pub-5940800287914227";
+		google_alternate_color = "C1D5F0";
+		google_ad_width = 120;
+		google_ad_height = 90;
+		google_ad_format = "120x90_0ads_al_s";
+		google_ad_channel ="1731489877";
+		google_color_border = ["FFFFFF","C1D5F0"];
+		google_color_bg = ["FFFFFF","C1D5F0"];
+		google_color_link = ["3366CC","0E135E"];
+		google_color_url = ["999999","296AA4"];
+		google_color_text = ["0066FF","425986"];
+		//--></script>
+		<script type="text/javascript" src="showStatAction.do-filer/show_ads.js">
+</script>
+        <iframe name="google_ads_frame" src="showStatAction.do-filer/ads.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" frameborder="0" height="90" scrolling="no" width="120"></iframe>
+
+
+
+<br><br>		
+</div>
+
+</div>
+  
+    <div id="text"> 
+	  <h1>Statistik för din hemsida</h1>
+      <h2>Statistik för <span id="highlightCounter">Räknare 1</span></h2>
+<p>Antal unika besökare innebär att ett ip endast räknats en gång. För
+antal sidvisningar räknas alla besök (alla ip räknas varje gång).
+Besökare i genomsnitt är ett medelvärde uträknat med de siffror som
+visas nedan för dag, vecka och månad.</p>
+
+<div class="stat posRight">
+<table>
+<tbody><tr>
+<th>Besökare per dag i genomsnitt</th>
+<td>
+13</td>
+</tr>
+<tr>
+<th>Besökare per vecka i genomsnitt</th>
+<td>
+88</td>
+</tr>
+<tr>
+<th>Besökare per månad i genomsnitt</th>
+<td>
+234</td>
+</tr>
+</tbody></table>
+</div>
+
+<div class="stat">
+<table>
+<tbody><tr>
+<th>Unika besökare idag</th>
+<td>
+6</td>
+</tr>
+<tr>
+<th>Antal sidvisningar idag</th>
+<td>
+6</td>
+</tr>
+<tr>
+<th>Antal besökare igår</th>
+<td>
+9</td>
+</tr>
+<tr>
+<th>Unika besökare totalt</th>
+<td>
+708</td>
+</tr>
+</tbody></table>
+</div>
+
+<p>
+<a href="http://www.mmmedier.se/ads/m/bonnier_illustreret_hovedtelefon_2007_03/?pid=20137&amp;bid=4494" rel="nofollow">
+Få 2 spännande nummer av Illustrerad Vetenskap och trådlösa hörlurar för bara 39,50 kr! </a>
+</p>
+
+<h3>Unika besökare</h3>
+<p>Endast unika besökare (dvs ett ip räknas endast en gång på ett dygn) sparas i statistiken som visas nedan.</p>
+<table cellpadding="5" cellspacing="5">
+<tbody><tr>
+<td valign="top">
+<h5>Unika per dag:</h5>
+<div class="stat">
+<table>
+<tbody><tr>
+<th>Datum</th>
+<th>Antal</th>
+</tr>
+<tr>
+<td class="statDate">2007-06-05</td>
+<td>9</td>
+</tr>
+<tr>
+<td class="statDate">2007-06-04</td>
+<td>15</td>
+</tr>
+<tr>
+<td class="statDate">2007-06-03</td>
+<td>8</td>
+</tr>
+<tr>
+<td class="statDate">2007-06-02</td>
+<td>11</td>
+</tr>
+<tr>
+<td class="statDate">2007-06-01</td>
+<td>9</td>
+</tr>
+<tr>
+<td class="statDate">2007-05-31</td>
+<td>14</td>
+</tr>
+<tr>
+<td class="statDate">2007-05-30</td>
+<td>9</td>
+</tr>
+<tr>
+<td class="statDate">2007-05-29</td>
+<td>12</td>
+</tr>
+<tr>
+<td class="statDate">2007-05-28</td>
+<td>11</td>
+</tr>
+<tr>
+<td class="statDate">2007-05-27</td>
+<td>9</td>
+</tr>
+<tr>
+<td class="statDate">2007-05-26</td>
+<td>11</td>
+</tr>
+<tr>
+<td class="statDate">2007-05-25</td>
+<td>11</td>
+</tr>
+<tr>
+<td class="statDate">2007-05-24</td>
+<td>11</td>
+</tr>
+<tr>
+<td class="statDate">2007-05-23</td>
+<td>17</td>
+</tr>
+<tr>
+<td class="statDate">2007-05-22</td>
+<td>14</td>
+</tr>
+<tr>
+<td class="statDate">2007-05-21</td>
+<td>22</td>
+</tr>
+<tr>
+<td class="statDate">2007-05-20</td>
+<td>19</td>
+</tr>
+<tr>
+<td class="statDate">2007-05-19</td>
+<td>17</td>
+</tr>
+<tr>
+<td class="statDate">2007-05-18</td>
+<td>11</td>
+</tr>
+<tr>
+<td class="statDate">2007-05-17</td>
+<td>11</td>
+</tr>
+<tr>
+<td class="statDate">2007-05-16</td>
+<td>12</td>
+</tr>
+<tr>
+<td class="statDate">2007-05-15</td>
+<td>18</td>
+</tr>
+<tr>
+<td class="statDate">2007-05-14</td>
+<td>15</td>
+</tr>
+<tr>
+<td class="statDate">2007-05-13</td>
+<td>18</td>
+</tr>
+<tr>
+<td class="statDate">2007-05-12</td>
+<td>8</td>
+</tr>
+<tr>
+<td class="statDate">2007-05-11</td>
+<td>19</td>
+</tr>
+<tr>
+<td class="statDate">2007-05-10</td>
+<td>14</td>
+</tr>
+<tr>
+<td class="statDate">2007-05-09</td>
+<td>9</td>
+</tr>
+<tr>
+<td class="statDate">2007-05-08</td>
+<td>9</td>
+</tr>
+</tbody></table>
+</div>
+</td>
+
+<td valign="top">
+<h5>Unika per vecka:</h5>
+<div class="stat">
+<table>
+<tbody><tr>
+<th>Vecka</th>
+<th>Antal</th>
+</tr>
+<tr>
+<td class="statDate">23</td>
+<td>24</td>
+</tr>
+<tr>
+<td class="statDate">22</td>
+<td>74</td>
+</tr>
+<tr>
+<td class="statDate">21</td>
+<td>95</td>
+</tr>
+<tr>
+<td class="statDate">20</td>
+<td>103</td>
+</tr>
+<tr>
+<td class="statDate">19</td>
+<td>98</td>
+</tr>
+<tr>
+<td class="statDate">18</td>
+<td>98</td>
+</tr>
+<tr>
+<td class="statDate">17</td>
+<td>115</td>
+</tr>
+<tr>
+<td class="statDate">16</td>
+<td>95</td>
+</tr>
+</tbody></table>
+</div>
+</td>
+
+<td valign="top">
+<h5>Unika per månad:</h5>
+<div class="stat">
+<table>
+<tbody><tr>
+<th>Månad</th>
+<th>Antal</th>
+</tr>
+<tr>
+<td class="statDate">June     </td>
+<td>52</td>
+</tr>
+<tr>
+<td class="statDate">May      </td>
+<td>430</td>
+</tr>
+<tr>
+<td class="statDate">April    </td>
+<td>220</td>
+</tr>
+</tbody></table>
+</div>
+</td>
+
+</tr>
+</tbody></table>
+
+<h3>Andel besökare per Skärmupplösning, Webbläsare och Operativsystem</h3>
+<p>Denna statistik viktas kontinuerligt mot antal sidladdningar för att alltid vara aktuell.</p>
+<table cellpadding="5" cellspacing="5">
+<tbody><tr>
+
+<td valign="top">
+<h5>Skärmupplösning</h5>
+<div class="stat">
+<table>
+<tbody><tr>
+<th class="stat">640x480</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">800x600</th>
+<td class="stat">3%</td>
+</tr>
+<tr>
+<th class="stat">1024x768</th>
+<td class="stat">44%</td>
+</tr>
+<tr>
+<th class="stat">1056x792</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">1152x864</th>
+<td class="stat">1%</td>
+</tr>
+<tr>
+<th class="stat">1152x870</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">1280x800</th>
+<td class="stat">6%</td>
+</tr>
+<tr>
+<th class="stat">1280x854</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">1280x960</th>
+<td class="stat">1%</td>
+</tr>
+<tr>
+<th class="stat">1280x1024</th>
+<td class="stat">26%</td>
+</tr>
+<tr>
+<th class="stat">1400x1050</th>
+<td class="stat">1%</td>
+</tr>
+<tr>
+<th class="stat">1600x1200</th>
+<td class="stat">7%</td>
+</tr>
+<tr>
+<th class="stat">1920x1200</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">1440x900</th>
+<td class="stat">3%</td>
+</tr>
+<tr>
+<th class="stat">1680x1050</th>
+<td class="stat">5%</td>
+</tr>
+<tr>
+<th class="stat">1280x768</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">1600x1024</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">Övriga</th>
+<td class="stat">2%</td>
+</tr>
+</tbody></table>
+</div>
+
+</td>
+<td valign="top">
+<h5>Webbläsare</h5>
+<div class="stat">
+<table>
+<tbody><tr>
+<th class="stat">Internet Explorer 4</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">Internet Explorer 5</th>
+<td class="stat">1%</td>
+</tr>
+<tr>
+<th class="stat">Internet Explorer 6</th>
+<td class="stat">52%</td>
+</tr>
+<tr>
+<th class="stat">Mozilla</th>
+<td class="stat">17%</td>
+</tr>
+<tr>
+<th class="stat">Netscape 4</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">Netscape 6 &amp; 7</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">Linux Konqueror</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">Opera</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">Gecko</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">Safari</th>
+<td class="stat">2%</td>
+</tr>
+<tr>
+<th class="stat">Opera mini (*)</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">Playstation</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">Internet Explorer 7.0</th>
+<td class="stat">29%</td>
+</tr>
+<tr>
+<th class="stat">Internet Explorer 4 mini (*)</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">Övriga</th>
+<td class="stat">0%</td>
+</tr>
+</tbody></table>
+</div>
+</td>
+
+<td valign="top">
+
+<h5>Operativsystem</h5>
+<div class="stat">
+<table>
+<tbody><tr>
+<th class="stat">Windows XP</th>
+<td class="stat">78%</td>
+</tr>
+<tr>
+<th class="stat">Windows Vista</th>
+<td class="stat">1%</td>
+</tr>
+<tr>
+<th class="stat">Linux</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">Macintosh</th>
+<td class="stat">2%</td>
+</tr>
+<tr>
+<th class="stat">Windows ME</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">Windows 2000</th>
+<td class="stat">15%</td>
+</tr>
+<tr>
+<th class="stat">Windows NT</th>
+<td class="stat">2%</td>
+</tr>
+<tr>
+<th class="stat">Windows 98</th>
+<td class="stat">2%</td>
+</tr>
+<tr>
+<th class="stat">Windows 95</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">Sun</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">Windows CE</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">Nokia</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">SonyEricsson</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">PlayStation</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">FreeBSD</th>
+<td class="stat">0%</td>
+</tr>
+<tr>
+<th class="stat">Övriga</th>
+<td class="stat">0%</td>
+</tr>
+</tbody></table>
+</div>
+
+</td>
+</tr>
+</tbody></table>
+
+<p>* Opera mini och Internet Explorer 4 mini används på mobiltelefoner och handdatorer.</p>
+
+<div class="adHor">
+		<script type="text/javascript"><!--
+		google_ad_client = "pub-5940800287914227";
+		google_alternate_color = "FFFFFF";
+		google_ad_width = 468;
+		google_ad_height = 60;
+		google_ad_format = "468x60_as";
+		google_ad_type = "text";
+		google_ad_channel ="4655588990";
+		google_color_border = ["FFFFFF","C1D5F0"];
+		google_color_bg = ["FFFFFF","C1D5F0"];
+		google_color_link = ["3366CC","0E135E"];
+		google_color_url = ["999999","296AA4"];
+		google_color_text = ["0066FF","425986"];
+		//--></script>
+		<script type="text/javascript" src="showStatAction.do-filer/show_ads.js">
+		</script>
+        <iframe name="google_ads_frame" src="showStatAction.do-filer/ads_002.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" frameborder="0" height="60" scrolling="no" width="468"></iframe>
+	  </div>
+    </div>
+	
+	
+	
+  </div>
+  
+  <div id="footer">
+
+  <div class="line">
+    <span class="lineText"> online</span> <span class="lineText">|</span> 
+	<span class="lineText"></span> <span class="lineText">|</span> 	
+  <span class="lineText"> unika besökare idag</span> 
+  </div> 
+  <div id="bottom">© susnet.se 2004-2006</div>
+    
+  </div>
+</div>
+<script src="showStatAction.do-filer/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-779153-3";
+urchinTracker();
+</script>
+</body></html>

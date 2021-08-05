@@ -1,0 +1,41 @@
+A:Hover {
+color					: red;
+text-decoration			: overline underline;
+}
+
+#top-menu {
+	display				: block;
+	background-color    : lightblue;
+	border-radius       : 5px;
+	border              : 1px solid black;
+	padding             : 10px;
+}
+#main-overview {
+	display				: block;
+	background-color   	: lightgrey;
+	color				: maroon;
+	border				: none;
+	padding				: 10px;
+}
+
+#main-detail {
+	display				: block;
+}
+
+.prod {
+	display				: flex;
+	background-color	: aqua;
+	padding 			: 10px;
+	border				: 2px solid black;
+	border-radius 		: 15px;
+	margin				: 10px;
+}
+#price {
+	font-weight			: bolder;
+	font-size			: x-large;
+}
+#summer {
+	display				: flex;
+	border 				: 1px solid blue;
+	width			 	: 100%;
+}

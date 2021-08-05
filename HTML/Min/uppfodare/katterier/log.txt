@@ -1,0 +1,14 @@
+2004-04-19 11:14	Fel inloggning av medlem 97		192.168.0.21
+2004-04-19 11:14	Inläggning av medlem 97	kull 
+2004-04-19 11:19	Fel inloggning av medlem 97		192.168.0.21
+2004-04-19 11:19	Inläggning av medlem 97	kull 
+2004-04-19 11:20	Fel inloggning av medlem 97		192.168.0.21
+2004-04-19 11:20	Inläggning av medlem 97	kull 45
+2004-04-19 11:24	Inläggning av medlem 97	kull 45
+2004-04-19 11:25	Inläggning av medlem 97	kull 45
+2004-04-19 11:28	Inläggning av medlem 97	kull 45
+2004-04-19 11:28	Inläggning av medlem 97	kull 45
+2004-04-19 11:39	Inläggning av medlem 97	kull 45
+2004-04-19 11:55	Inläggning av medlem 97	kull 45
+2004-04-19 15:30	Inläggning av medlem 97	kull 45
+2004-04-19 15:31	Inläggning av medlem 97	kull 45

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIN Exhibition Web</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+</head>
+<body>
+    <div id="top-menu">
+        <ul id="top-menu-items">
+            <li>Home</li>
+            <li>Settings</li>
+            <li>Help</li>
+        </ul>
+    </div>
+    <div id="main-overview">
+        <h1>MIN Exhition Web</h1>
+        text jdsblii si i i iaig   u u uh svsgsiuhsdfivsvbi
+    </div>
+    <div id="main-detail"></div>
+    <div id="bottom-menu"></div>
+    <div id="footer"></div>
+
+
+    <script text="text/babel">      // JSX
+        function MyComponent(){
+            return <h1>My First Function Compnent</h1>;
+        }
+
+        function Content(){
+            return (
+                <div>
+                    <p>gdgfgf</p>
+                    <p>fgfdgfd</p>
+                    <p>fdgdgd</p>
+                  </div>   
+            )
+        }
+
+        let x = React.creatElement("h1", {}, "Sarting React!");
+        let r = document.getElementById("root");
+       //ReactDOM.render(x,r);
+       //ReactDOM.render( <MyComponent />,r);
+       ReactDOM.render( <Content />,r);
+
+    </script>
+</body>
+</html>

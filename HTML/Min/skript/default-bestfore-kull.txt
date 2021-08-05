@@ -1,0 +1,1 @@
+update kull set levdatum =  from_days( to_days( neddatum ) + 180 ) where id =32
