@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My cars</title>
+    <script src="jquery-360.js"></script>
+</head>
+
+<body>
+    <h1>My cars</h1>
+    <h2>Add car</h2>
+    <table>
+        <tr>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Year</th>
+        </tr>
+        <tr>
+            <td><input type="text" id="brand" value="Volvo"></td>
+            <td><input type="text" id="model" value="244 GLT"></td>
+            <td><input type="text" id="year" value="1982"></td>
+            <td><button id="addCar" onClick="addCar(brand, model, year)">Add</button></td>
+        </tr>
+    </table>
+
+    <table id="carTable">
+
+    </table>
+
+</body>
+
+</html>
+<script>
+    let cars = [];
+
+    function addCar(brand, model, year){
+        cars.push({
+            brand: brand.value,
+            model: model.value,
+            year: year.value,
+        });
+
+        loadMyCars();
+    };
+
+    function loadMyCars(){
+        let result = "";
+        result += "<tr>";
+        result += "<th>Brand</th>";
+        result += "<th>Model</th>";
+        result += "<th>Year</th>";
+        result += "</tr>";
+
+        // for(let i =0;i < cars.length; i++){
+        //     result += "<tr>";
+        //     result += "<td>" + cars[i].brand + "</td>";
+        //     result += "<td>" + cars[i].model + "</td>";
+        //     result += "<td>" + cars[i].year + "</td>";
+        //     result += "</tr>";
+        // }
+
+        $.each(cars, function(index,car){
+            result += "<tr>";
+            result += "<td>" + car.brand + "</td>";
+            result += "<td>" + car.model + "</td>";
+            result += "<td>" + car.year + "</td>";
+            result += "</tr>";
+        })
+
+        //document.getElementById("carTable").innerHTML = result;
+        $("#carTable").html(result);
+    }
+
+</script>

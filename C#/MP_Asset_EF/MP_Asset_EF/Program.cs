@@ -75,7 +75,7 @@ namespace MP_Asset_EF
                 if (cmd == ConsoleKey.O)
                 {
                     // O  Lista Kontor
-                    Skrivut.Offices(db, "All");
+                    Skrivut.Offices(db, "All", int.MinValue);
                     continue;
                 }
                 if (cmd == ConsoleKey.R)

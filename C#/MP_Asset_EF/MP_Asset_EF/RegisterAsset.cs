@@ -15,11 +15,10 @@ namespace MP_Asset_EF
             //Type, PurchaseDate, Brand, Model, Price, Number
             Asset art = new Asset();
             string input = "";
-            int tmp;
             bool contStatus = true;
             Console.Clear();
             Console.WriteLine("Valbara Kontor : ");
-            for (int i=0; i < kontor.Count; i++)
+            for (int i = 0; i < kontor.Count; i++)
             {
                 for (int j = 0; j < 5 && i < kontor.Count; j++, i++)
                 {
@@ -28,8 +27,6 @@ namespace MP_Asset_EF
                 Console.WriteLine("\n");
             }
 
-            Console.Write("Vill du Skapa/uppdatera eller Ta bort ? : ");
-            ConsoleKey cmd = Console.ReadKey(true).Key;
             contStatus = true;
             Office of = new Office();
             while (contStatus)                                                           //  inmatningsloop Kontor
@@ -42,18 +39,12 @@ namespace MP_Asset_EF
                 of = db.Offices.Where(c => c.OfficeId.Equals(idKontor)).FirstOrDefault();
                 if (of == null)
                 {
-                    Error.Msg("Kontor saknas",input);
+                    Error.Msg("Kontor saknas", input);
                     continue;
                 }
-                // 
-                //if (cmd == ConsoleKey.T)
-                //{
-                //    db.Remove(of);
-                //    break;
-                //}
                 art.OfficeId = idKontor;
                 contStatus = false;
-                }
+            }
             contStatus = true;
             while (contStatus)                                                               //  inmatningsloop Gemensam - inköpsdatum
             {                                                                                //  med validering

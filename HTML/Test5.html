@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My cars</title>
+    <link rel="stylesheet" href="Car2.css">
+    <script src="jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <h1>My cars</h1>
+    <h2>Add car</h2>
+    <table>
+        <tr>
+            <th>Index</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Year</th>
+        </tr>
+        <tr>
+            <td><input type="text" id="index"></td>
+            <td><input type="text" id="brand" value="Volvo"></td>
+            <td><input type="text" id="model" value="244 GLT"></td>
+            <td><input type="text" id="year" value="1982"></td>
+            <td><button id="addCar" onClick="addCar(brand, model, year)">Add</button>
+            <button hidden id="updateCar" onClick="updateCar(index, brand, model, year)">Update</button></td>
+        </tr>
+    </table>
+
+    <table id="carTable">
+    </table>
+
+</body>
+
+</html>
+<script>
+    let cars = [];
+    const uri = 'https://localhost:44345/api/Cars';
+    getCars();
+
+    function addCar(brand, model, year){
+        addCarToApi({
+            brand: brand.value,
+            model: model.value,
+            year: year.value
+        });
+        // cars.push({
+        //     brand: brand.value,
+        //     model: model.value,
+        //     year: year.value,
+        // });
+
+        //loadMyCars();
+    };
+
+    function deleteCar(button){
+        let index = $(button).parent().parent().index() - 1;
+        let id = cars[index].id;
+        deleteCarFromApi(id);
+        //cars.splice(index, 1);
+
+        //loadMyCars();
+    };
+
+    function editCar(button){
+        let index = $(button).parent().parent().index() - 1;
+        let car = cars[index];
+        $("#index").val(index);
+        $("#brand").val(car.brand);
+        $("#model").val(car.model);
+        $("#year").val(car.year);
+        $("#addCar").hide();
+        $("#updateCar").show();
+    };
+
+    function updateCar(index, brand, model, year){
+        updateCarInApi({
+            id: cars[index.value].id,
+            brand: brand.value,
+            model: model.value,
+            year: year.value
+        // };
+        })
+        // cars[index.value] = {
+        //     brand: brand.value,
+        //     model: model.value,
+        //     year: year.value
+        // };
+
+        $("#addCar").show();
+        $("#updateCar").hide();
+
+        // loadMyCars();
+    };
+
+
+    function loadMyCars(){
+        let result = "";
+        result += "<tr>";
+        result += "<th>Brand</th>";
+        result += "<th>Model</th>";
+        result += "<th>Year</th>";
+        result += "</tr>";
+
+        $.each(cars, function(index,car){
+            result += "<tr>";
+            result += "<td>" + car.brand + "</td>";
+            result += "<td>" + car.model + "</td>";
+            result += "<td>" + car.year + "</td>";
+            result += "<td>" +
+                "<button onClick='deleteCar(this)'>Delete</button>" +
+                "<button onClick='editCar(this)'>Edit</button>" +
+                "</td>";
+            result += "</tr>";
+        })
+
+         $("#carTable").html(result);
+    };
+
+    function populateCars(data){
+        cars = data;
+        loadMyCars();
+    };
+
+    function getCars(){
+        $.ajax({
+            url : uri,
+            type: 'GET',
+            dataType: 'json',
+            success: function(cars) {
+                populateCars(cars);
+            },
+            error: function(request, message, error){
+                handleException(request, 'getCars_error', error);
+            }
+        });
+    };
+
+    function addCarToApi(car){
+        $.ajax({
+            url: uri,
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(car),
+            success: function(cars){
+                getCars();
+            },
+            error: function(request, message, error){
+                handleException(request, 'addCar_error', error);
+            }
+        });
+    };
+
+    function deleteCarFromApi(id){
+        $.ajax({
+            url: uri + '/' + id,
+            type: 'DELETE',
+            success:function(){
+                getCars();
+            },
+            error: function(request, message, error){
+                handleException(request, 'deleteCar_error', error);
+            }
+        })
+    }
+
+    function updateCarInApi(car){
+        $.ajax({
+            url: uri + '/' + car.id,
+            type: 'PUT',
+            contentType: 'application/json',
+            data: JSON.stringify(car),
+            success: function(){
+                getCars();
+            },
+            error: function(request, message, error){
+                handleException(request, 'updateCar_error', error);
+            }
+        })
+    }
+
+    function handleException(request, message, error){
+        alert(message);
+    };
+
+</script>

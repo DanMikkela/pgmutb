@@ -13,7 +13,7 @@ namespace MP_Asset_EF
             Console.Clear();
             Console.WriteLine("**********************************");
             Console.WriteLine("**  Menyalternativ              **");
-            Console.WriteLine("**  -- Registrera ------------- **");
+            Console.WriteLine("**  -- Registrera / Uppdatera - **");
             Console.WriteLine("**  L  Land                     **");
             Console.WriteLine("**  K  Kontor   (kräver Land)   **");
             Console.WriteLine("**  T  Tillgång (kräver Kontor) **");

@@ -82,6 +82,9 @@ namespace MP_Asset_EF.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Boss")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("CountryId")
                         .HasColumnType("int");
 

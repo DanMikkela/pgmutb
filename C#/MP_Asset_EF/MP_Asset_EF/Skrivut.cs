@@ -108,28 +108,38 @@ namespace MP_Asset_EF
                     Console.WriteLine("\n");
                 }
             }
-            //Console.WriteLine("\nTryck enter för meny");
-            //Console.ReadLine();
-        }
-
-        public static void Offices(MpContext db, string formatting)
-        {
-            List<Office> kontor = db.Offices.ToList();
-            if (formatting == "All")
+            if (formatting == "ID")
             {
-                Console.WriteLine("Existerande Valutakoder/Länder :");
-                for (int i = 0; i < kontor.Count; i++)
+                Console.WriteLine("Välj bland följande Länder :");
+                for (int i = 0; i < land.Count; i++)
                 {
-                    for (int j = 0; j < 5 && i < kontor.Count; j++, i++)
+                    for (int j = 0; j < 5 && i < land.Count; j++, i++)
                     {
-                        Console.Write(" " + kontor[i].Country + ":" + kontor[i].Location);
+                        Console.Write(land[i].CountryId + " " + land[i].CurrencyCode + ":" + land[i].Name);
                     }
                     Console.WriteLine("\n");
                 }
             }
-            //Console.WriteLine("\nTryck enter för meny");
-            //Console.ReadLine();
-
         }
+
+        public static void Offices(MpContext db, string formatting, int country)
+        {
+        List<Office> kontor = db.Offices.ToList();
+            Console.WriteLine("Existerande Valutakoder/Länder :");
+            for (int i = 0; i < kontor.Count; i++)
+            {
+                for (int j = 0; j < 5 && i < kontor.Count; j++, i++)
+                {
+                    if (formatting == "All" ||  (formatting == "C" && kontor[i].CountryId == country))
+                    {
+                        Console.Write("ID: " + kontor[i].OfficeId + " " + kontor[i].Country + ":" + kontor[i].Location);
+                    }
+                }
+                Console.WriteLine("\n");
+            }
+        }
+        //Console.WriteLine("\nTryck enter för meny");
+        //Console.ReadLine();
+
     }
 }

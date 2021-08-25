@@ -54,12 +54,29 @@ namespace MP_Asset_EF
 
                 of.Location = input;
 
+                Console.Write("För borttag ange 'del', annars 'enter' : ");
+                input = Console.ReadLine().Trim().ToUpper();
+                if (input.Length > 1)
+                {
+                    if (input.Contains("DEL"))
+                    {
+                        db.Remove(of);
+                        db.SaveChanges();
+                        break;
+                    }
+                }
+
+                Console.Write("Ange Chef : ");
+                input = Console.ReadLine().Trim();
+                of.Boss = input; 
+
                 if (existOffice)
                 {
                     db.Offices.Update(of);
                 }
                 else
                 {
+                    of.CountryId = co.CountryId;
                     db.Offices.Add(of);
                 }
                 db.SaveChanges();
