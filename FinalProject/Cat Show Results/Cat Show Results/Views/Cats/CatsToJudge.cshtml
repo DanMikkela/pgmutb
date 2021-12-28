@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Cat_Show_Results.Models.Cat>
+
+@{
+    ViewData["Title"] = "Cats List";
+    int i = 0;
+}
+<h4>Cats List</h4>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Number</th>
+@if (@User.IsInRole("Admin"))
+            {
+                <th>Name</th>
+            }
+            <th>Breed</th>
+            <th>EMS</th>
+            <th>Sex</th>
+            <th>Born</th>
+            <th>Class</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.Number
+            </td>
+@if (@User.IsInRole("Admin"))
+{
+            <td>
+                @item.Name
+            </td>
+}
+            <td>
+                @item.BreedName
+            </td>
+            <td>
+                @item.EMS
+            </td>
+            <td>
+                @item.Sex
+            </td>
+            <td>
+                @item.Born.ToShortDateString()
+            </td>
+            <td>
+                @item.ClassNr
+            </td>
+            <td>
+                @item.Category
+            </td>
+            <td>
+@*                <a asp-action="Edit" asp-route-id="@item.CatId">Edit</a> |*@
+@*                <a asp-action="Details" asp-route-id="@item.CatId">Details</a> |*@
+@*                <a asp-action="Delete" asp-route-id="@item.CatId">Delete</a> | *@
+                <a asp-action="Edit" asp-controller="Tickets" asp-route-id=@ViewBag.Tickets[i]>Ticket</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

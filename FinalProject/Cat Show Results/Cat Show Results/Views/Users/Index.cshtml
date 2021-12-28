@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Cat_Show_Results.Models.User>
+
+@{
+    ViewData["Title"] = "Users";
+    var users = @ViewBag.Users;
+}
+
+<h4>User List</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                User Name
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in users) {
+        <tr>
+            <td>
+                @item.UserName
+            </td>
+            <td>
+                <a asp-controller="Users" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+               
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Cat_Show_Results.Models.Judge>
+
+@{
+    ViewData["Title"] = "Judges List";
+}
+
+<h4>Judges List</h4>
+@if (@User.IsInRole("Admin"))
+{
+    <p><a asp-action="Create">Create New</a></p> 
+    <p><a asp-controller="Systems" asp-action="Index">Back to Admin</a></p>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Judge</th>
+            <th>Country</th>
+            <th>Category 1</th>
+            <th>Category 2</th>
+            <th>Category 3</th>
+            <th>Category 4</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category4)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.JudgeId">Edit</a>
+@*                <a asp-action="Details" asp-route-id="@item.JudgeId">Details</a>*@
+            @if (@User.IsInRole("Admin"))
+            {   <a asp-action="Delete" asp-route-id="@item.JudgeId">Delete</a>  }
+            <a asp-action="CatsToJudge" asp-controller="Cats" asp-route-id=@item.JudgeId >Cats to Judge</a>
+                    @*                                                     args = 1. JudgeId   *@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

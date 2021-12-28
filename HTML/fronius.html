@@ -1,0 +1,1213 @@
+
+
+
+<!DOCTYPE html>
+<html culture-name="sv" lang="sv">
+<head>
+  <!-- Load balancer probe online: {60A423A7-DE9A-4932-BC0D-3C38E65F0B65} -->
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+  <meta name="theme-color" content="#4d4d4d"/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Fronius Solar.web"/>
+  <base href=""/>
+  <title>Hemma</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/Content/images/icon-homescreen.png"/>
+  <link rel="shortcut icon" type="image/x-icon" href="/Content/images/favicon.png">
+
+  <!-- Header Styles -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,300&subset=greek,cyrillic,latin" rel="stylesheet" type="text/css">
+  <link href="/Content/css?v=iATbd2ypJmrhs5KyizVvD7ChQjVs3go6YjzspFd7pwk1" rel="stylesheet"/>
+
+  
+  
+  
+  
+  <style>
+    .campaign-widget {
+      position: absolute;
+      top: 0;
+    }
+
+    #powerWidget { cursor: pointer; }
+  </style>
+  <link href="/node_modules/@fronius-se/energy-flow-widgets/dist/EnergyFlow/ComponentDetailsOverlay.css?v=OH_UmddliolHft9H1YpUOotIA2" rel="stylesheet"/>
+
+
+
+
+
+
+  <!-- Header Scripts -->
+<script>
+  window.onerror = function(msg, url, lineNo, columnNo, error) {
+    var string = msg && msg.toString().toLowerCase();
+    var substring = "script error";
+    if (string.indexOf(substring) > -1) {
+      alert('Script Error: See Browser Console for Detail');
+    }
+    else {
+      var message = [
+        'Message: ' + msg,
+        'URL: ' + url,
+        'Line: ' + lineNo,
+        'Column: ' + columnNo,
+        'Error object: ' + JSON.stringify(error)
+      ].join(' - ');
+
+      alert(message);
+    }
+
+    return false;
+  };
+</script>  <script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                                                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KNHPXZZ');
+</script>
+
+
+  
+
+
+<script>
+  // Keep in sync with typings_fixes/Fronius.d.ts !
+  var GlobalScriptResources = {
+    antiForgeryToken: "JO-cFtCZOm7x4Yki7MG7uguzuiYIkbYBbanI20N-PI5xX9XLUpWNmAdqce7w33UVWYpg4CbxcZwolleI22VUbUU4muyuyyztxgEMJrMvHQqnsDh6dhIRrki7d4ke9wuuoIT8Ig2",
+    featureToggles: {
+      enableCustomGoogleAnalytics: true
+    },
+    strings: {
+      OK: "OK",
+      Cancel: "Avbryt",
+      Yes: "Ja",
+      No: "Nej",
+      true: "Ja",
+      false: "Nej",
+      Active: "Aktiv",
+      Warning: "Varning",
+      Error: "Fel",
+      Information: "Information",
+      Success: "OK",
+      PleaseWait: "V&#228;nta..."
+    },
+    urls: {
+      loadingImageUrl: "/Content/images/spinner-bg-red.gif"
+    },
+    userSettings: {
+      cultureName: "sv",
+      dateFormat: "MM/DD/YYYY",
+      timeFormat: "hh:mm A",
+      decimalSeparator: ","
+    }
+  };
+</script>
+
+  <script src="/bundles/infrastructure?v=9ktsOtIo0upvJP7-7FiXuOoOJe58RLFJ__wIRPL2vGo1"></script>
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" data-offset="51" class="">
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KNHPXZZ" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+</noscript>
+
+<noscript>
+  <div class="noJavaScriptMessage" style="height: 100%; width: 100%; background: #808080; background: rgba(128, 128, 128, 0.5); position: fixed; z-index: 10000;">
+    <div class="u-center-content">
+      <div class="alert alert-danger">
+        <strong>Din webbl&#228;sare st&#246;der inte JavaScript!</strong><br/>
+        JavaScript kr&#228;vs f&#246;r att kunna anv&#228;nda Fronius Solar.web. Aktivera JavaScript i din webbl&#228;sares inst&#228;llningar och l&#228;s in sidan igen.
+      </div>
+    </div>
+  </div>
+</noscript>
+
+
+<!-- Header, Navigation -->
+<nav class="navbar navbar-fixed-top navbar-inverse js-header js-fixed-header" role="navigation">
+  <div id="navigation" class="u-center u-max-page-width padding-left-right no-padding-xs no-padding-sm">
+    <a  class="js-home" href="/">
+      <img class="navbar-brand fronius-logo" src="/Content/images/fronius-logo.svg"/>
+    </a>
+    
+      <a class="navbar-brand navbar-brand-text js-navbar-brand-text" href="/PvSystems/PvSystem?pvSystemId=76727fec-2741-408c-b167-14da5f415e50">Hemma</a>
+
+    
+  <ul class="nav navbar-nav nav-pills pull-right">
+
+        <li class="hidden-xs">
+          <a href="/ProductRegistration" title="Produktregistrering">
+            <span class="hidden-sm">Produktregistrering</span>
+            <span class="icon-sw-product-registration mod-lg"></span>
+          </a>
+        </li>
+      <li class="dropdown pull-right" id="userDropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" title="dan@miomi.se">
+          <span class="icon-sw-user-account-standard mod-lg"></span>
+          <span class="js-user-icon-message-count badge mod-primary hidden" style="font-size: 10px; margin-left: -20px; margin-bottom: -25px;"></span>
+          <span class="dropdown-arrow mod-top-nav hidden-sm hidden-xs"></span>
+        </a>
+
+        <ul class="dropdown-menu nav-dropdown-menu" role="menu" style="min-width: 240px">
+          <li class="u-border-bottom no-link">
+            <a href="#" class="no-link">
+              <span class="icon-sw icon-sw-user u-font-icons-very-small" ></span>
+              <span class="dropdown-user-container u-ellipsed-text">
+                <span>
+                  dan@miomi.se
+                </span>
+                              </span>
+
+            </a>
+          </li>
+
+            <li class="u-border-bottom dropdown-item-primary">
+              <a href="/Home/PremiumInfo">
+                <span class="icon-sw icon-sw-premium premium-info-icon u-font-icons-very-small u-text-red u-text-white mod-user-dropdown" title="Premium"></span>
+                <span class="u-text-white" style="white-space: normal; display: table-cell;">Bli Solar.web Premium-medlem nu</span>
+              </a>
+            </li>
+                    
+            <li class="u-border-bottom visible-xs-block">
+              <a href="/ProductRegistration" title="Produktregistrering">
+                <span class="icon-sw icon-sw-register-product u-font-icons-very-small"></span>
+                <span>Produktregistrering</span>
+              </a>
+            </li>
+
+          <li class="u-border-bottom">
+            <a href="/PvSystems/AddPvSystem">
+              <span class="icon-sw icon-sw-add-btn-03 u-font-icons-very-small"></span>
+              <span>L&#228;gg till solcellsanl&#228;ggning</span>
+            </a>
+          </li>
+
+          <li id="js-user-menu-message-center" class="u-border-bottom">
+            <a href="/MessageCenter/SystemMessages">
+              <span class="icon-sw icon-sw-message-center u-font-icons-very-small"></span>
+              <span class="js-second-level-nav-element-text">Meddelandecenter</span>
+              <span class="js-user-icon-message-count badge mod-primary hidden" style="font-size: 10px; margin-left: 10px;"></span>
+            </a>
+          </li>
+
+          <li class="u-border-bottom">
+            <a href="/UserSettings/UserProfile" id="userSettings">
+              <span class="icon-sw icon-sw-settings u-font-icons-very-small"></span>
+              <span>Anv&#228;ndarinst&#228;llningar</span>
+            </a>
+          </li>
+
+
+          <li>
+            <a href="/Account/LogOff" id="LogOut">
+              <span class="icon-sw icon-sw-logout u-font-icons-very-small"></span>
+              <span>Logga ut</span>
+            </a>
+          </li>
+        </ul>
+
+      </li>
+  </ul>
+
+  </div>
+</nav>
+
+<div class="notification-bar js-notification-bar">
+  <div class="formular-bar js-formular-bar js-fixed-header">
+  <div class="formular-bar-content">
+    <div class="second-level-nav no-padding-top mod-notification">
+      <div class="u-max-page-width u-center second-level-nav-container">
+        <div class="col-xs-12">
+          
+          <ul class="nav nav-pills mod-second-level mod-centered formular-bar-save">
+            <li class="second-level-nav-element second-level-nav-element text-only">
+              <a href="#" class="mod-notification js-formular-reset">
+                <span class="second-level-nav-element-text">&#197;terst&#228;ll</span>
+              </a>
+            </li>
+            <li class="second-level-nav-element second-level-nav-element text-only">
+              <a href="#" class="mod-notification js-formular-submit">
+                <span class="second-level-nav-element-text">Spara</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul class="nav nav-pills mod-second-level formular-bar-loading">
+            <li class="second-level-nav-element second-level-nav-element text-only">
+              <span class="x-spinner">
+                <img src="/Content/images/spinner-bg-red.gif" style="width: 32px;">
+              </span>
+              <a href="#" class="mod-notification js-formular-cancel-submit">
+                <span class="second-level-nav-element-text">Avbryt</span>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+</div>
+
+<!-- Subnavigation-->
+
+  
+
+  <div class="second-level-nav js-second-level-nav js-fixed-header">
+    <div class="u-max-page-width u-center second-level-nav-container js-second-level-nav-container">
+      <ul class="nav nav-pills mod-second-level js-tabs">
+
+
+        <li class="js-menu-item second-level-nav-element text-only selected"><a href="/PvSystems/PvSystem?pvSystemId=76727fec-2741-408c-b167-14da5f415e50"><span class="second-level-nav-element-text js-second-level-nav-element-text">Översikt</span></a></li>
+        <li class="js-menu-item second-level-nav-element text-only"><a href="/PvSystems/Realtime?pvSystemId=76727fec-2741-408c-b167-14da5f415e50"><span class="second-level-nav-element-text js-second-level-nav-element-text">Analysera</span></a></li>
+        <li class="js-menu-item second-level-nav-element text-only"><a href="/Chart/Chart?pvSystemId=76727fec-2741-408c-b167-14da5f415e50"><span class="second-level-nav-element-text js-second-level-nav-element-text">Energibalans</span></a></li>
+
+<li class="js-menu-item second-level-nav-element text-only"><a href="/Report/Reports?pvSystemId=76727fec-2741-408c-b167-14da5f415e50"><span class="second-level-nav-element-text js-second-level-nav-element-text">Rapporter</span></a></li>        <li class="js-menu-item second-level-nav-element text-only"><a href="/MessageCenter/ServiceMessages?pvSystemId=76727fec-2741-408c-b167-14da5f415e50"><span class="second-level-nav-element-text js-second-level-nav-element-text">Servicemeddelanden</span></a></li>        <li class="js-menu-item second-level-nav-element text-only"><a href="/PvSystemSettings/PvSystemProfile?pvSystemId=76727fec-2741-408c-b167-14da5f415e50"><span class="second-level-nav-element-text js-second-level-nav-element-text">Inställningar</span></a></li>
+        <li class="dropdown second-level-nav-element text-only js-last-tab hidden"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="second-level-nav-element-text dropdown-arrow-menu js-last-tab-text">Mer</span></a><ul class="dropdown-menu dropdown-menu-right nav-dropdown-menu js-dropdown-tabs" role="menu"></ul></li>
+
+          <li class="hidden-xs second-level-nav-element pull-right">
+            <button class="btn btn-primary" onclick="window.location = &#39;/Home/PremiumInfo&#39;;" type="button">Premium</button>
+          </li>
+
+      </ul>
+    </div>
+  </div>
+
+
+
+
+<!-- Content -->
+<div class="layout-content js-content">
+  
+
+
+
+
+
+
+
+<div class="container-fluid u-center u-max-page-width no-padding-xs">
+  <div class="row margin-content">
+    
+
+
+
+
+
+
+
+<div class="margin-system settings">
+  
+
+
+
+
+<div class="col-xs-12 no-padding js-inline-notification-container hidden"></div>
+<div class="overlay-container" style="position: relative;">
+  <div id="powerWidget" class="col-sm-6 col-lg-4 pvsystem-widget-container mod-aspect-1-1">
+    <div class="widget aspect-1-1-content mod-pvsystem-widget mod-pvsystem-widget-square js-live-data-widget">
+      <div class="savings-widget-title">
+        Aktuell effekt
+      </div>
+      <div class="savings-widget-body js-live-data-widget-content">
+          <div class="loading-progress mod-widget js-live-loading">
+    <div class="loading-progress-item1"></div>
+    <div class="loading-progress-item2"></div>
+    <div class="loading-progress-item3"></div>
+    <div class="loading-progress-item4"></div>
+  </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-sm-6 col-lg-4 pvsystem-widget-container mod-aspect-1-1">
+  <div class="widget aspect-1-1-content mod-pvsystem-widget mod-cursor-pointer js-energyflowchart-container">
+    <div class="savings-widget-title mod-info">
+      Energibalans Idag
+      <span class='c-context-help-trigger js-context-help-trigger js-page-guide-element page-guide-element icon-sw-info-100 mod-widget-header hidden js-energy-balance-help-text' data-content=''></span>
+    </div>
+    
+
+
+  <div class="loading-progress mod-widget js-loading">
+    <div class="loading-progress-item1"></div>
+    <div class="loading-progress-item2"></div>
+    <div class="loading-progress-item3"></div>
+    <div class="loading-progress-item4"></div>
+  </div>
+
+
+<div class="savings-widget-body js-widget-container">
+
+  <div class="live-plot-header js-live-plot-header js-live-plot-header-with-meter hidden">
+    <div title="Inmatning" class="icon-to-grid icon-sw-upward"></div>
+    <div title="Inmatning" class="text-to-grid js-energy-to-grid"></div>
+    <div title="Täckning" class="text-from-grid js-energy-from-grid"></div>
+    <div title="Täckning" class="icon-from-grid icon-sw-downward"></div>
+  </div>
+
+  <div class="live-plot-header js-live-plot-header js-live-plot-header-without-meter hidden">
+    <div title="Produktion" class="text-to-grid js-production"></div>
+  </div>
+
+  <div class="live-plot-chart js-live-plot-chart"></div>
+</div>
+
+  </div>
+</div>
+<div class="col-lg-4 no-padding pvsystem-widget-container mod-full-and-half-height">
+
+  <div class="col-sm-6 col-lg-12 pvsystem-widget-container mod-half-height-top">
+    <div class="widget aspect-1-1-content mod-pvsystem-widget js-earnings-widget">
+      <div class="savings-widget-title mod-info">
+        Avkastning
+        <span class='c-context-help-trigger js-context-help-trigger js-page-guide-element page-guide-element icon-sw-info-100 mod-widget-header' data-content='Det visade v&#228;rdet best&#229;r av &lt;b&gt;avkastningen + besparingen&lt;/b&gt; fr&#229;n din solcellsanl&#228;ggning f&#246;r den aktuella tidsperioden.&lt;br&gt;&lt;b&gt;Avkastning&lt;/b&gt; = den levererade energin till eln&#228;tet multiplicerat med en taxa.&lt;br&gt;&lt;b&gt;Besparing&lt;/b&gt; = den direkt f&#246;rbrukade energin multiplicerat med en taxa.&lt;br&gt;&lt;b&gt;F&#246;r att kunna nyttja funktionen m&#229;ste taxan f&#246;rst ha lagts in i inst&#228;llningarna!&lt;/b&gt;'></span>
+      </div>
+      <div class="savings-widget-body">
+        <div class="swiper-container savings-swiper-container js-earning-container">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide mod-centered">
+    <div class="savings-swiper-image_row ">
+      <img src="/Content/images/savings_wallet.svg" alt="Avkastning"/>
+    </div>
+    <div class="savings-swiper-value_row  ">
+      
+        <span class="savings-heading js-savings-heading">Idag</span>
+        <br/>
+
+      <span class="savings-value js-savings-value">0,00</span>
+
+        <span class="savings-unit js-savings-unit">SEK</span>
+    </div>
+  </div>
+
+              <div class="swiper-slide mod-centered">
+    <div class="savings-swiper-image_row ">
+      <img src="/Content/images/savings_wallet.svg" alt="Avkastning"/>
+    </div>
+    <div class="savings-swiper-value_row  ">
+      
+        <span class="savings-heading js-savings-heading">oktober 2021</span>
+        <br/>
+
+      <span class="savings-value js-savings-value">418,47</span>
+
+        <span class="savings-unit js-savings-unit">SEK</span>
+    </div>
+  </div>
+
+              <div class="swiper-slide mod-centered">
+    <div class="savings-swiper-image_row ">
+      <img src="/Content/images/savings_wallet.svg" alt="Avkastning"/>
+    </div>
+    <div class="savings-swiper-value_row  ">
+      
+        <span class="savings-heading js-savings-heading">2021</span>
+        <br/>
+
+      <span class="savings-value js-savings-value">19&#160;200,08</span>
+
+        <span class="savings-unit js-savings-unit">SEK</span>
+    </div>
+  </div>
+
+              <div class="swiper-slide mod-centered">
+    <div class="savings-swiper-image_row ">
+      <img src="/Content/images/savings_wallet.svg" alt="Avkastning"/>
+    </div>
+    <div class="savings-swiper-value_row  ">
+      
+        <span class="savings-heading js-savings-heading">Totalt</span>
+        <br/>
+
+      <span class="savings-value js-savings-value">52&#160;261,92</span>
+
+        <span class="savings-unit js-savings-unit">SEK</span>
+    </div>
+  </div>
+
+          </div>
+          <div class="swiper-pagination mod-small mod-grey js-earning-pagination"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-lg-12 pvsystem-widget-container mod-half-height-bottom">
+    <div class="widget aspect-1-1-content mod-pvsystem-widget js-savings-widget">
+      <div class="savings-widget-title">
+        CO<sub>2</sub>-besparing Totalt
+      </div>
+      <div class="savings-widget-body">
+        <div class="swiper-container savings-swiper-container js-co2-saving-container">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide mod-centered">
+    <div class="savings-swiper-image_row ">
+      <img src="/Content/images/savings_co2emission.svg" alt="CO<sub>2</sub>-besparing"/>
+    </div>
+    <div class="savings-swiper-value_row  ">
+      
+
+      <span class="savings-value js-savings-value">21,32</span>
+
+        <span class="savings-unit js-savings-unit">t</span>
+    </div>
+  </div>
+
+              <div class="swiper-slide mod-centered">
+    <div class="savings-swiper-image_row ">
+      <img src="/Content/images/savings_trees.svg" alt="CO<sub>2</sub>-besparing"/>
+    </div>
+    <div class="savings-swiper-value_row  ">
+      
+
+      <span class="savings-value js-savings-value">547</span>
+
+    </div>
+  </div>
+
+              <div class="swiper-slide mod-centered">
+    <div class="savings-swiper-image_row ">
+      <img src="/Content/images/savings_car.svg" alt="CO<sub>2</sub>-besparing"/>
+    </div>
+    <div class="savings-swiper-value_row  ">
+      
+
+      <span class="savings-value js-savings-value">85&#160;558</span>
+
+        <span class="savings-unit js-savings-unit">km</span>
+    </div>
+  </div>
+
+          </div>
+          <div class="swiper-pagination mod-small mod-grey js-co2-saving-pagination"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-6 col-lg-4 pvsystem-widget-container mod-image-widget">
+
+  <div class="widget aspect-1-1-content mod-pvsystem-widget mod-cursor-pointer js-pvs-image-container">
+    <div class="savings-widget-title">Hemma</div>
+    <div class="savings-widget-body">
+        <div style="background-image: url(/Image/Show?pvSystemId=76727fec-2741-408c-b167-14da5f415e50&amp;pictureId=e772b86d-8f8e-4f36-a026-ab710097e401)" class="img-responsive ratio-4-3 js-image-widget" alt="Hemma"></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  <div class="col-sm-6 col-lg-8 pvsystem-widget-container mod-weather-widget mod-loading js-weather-widget-container">
+    <div class="widget fill-parent mod-pvsystem-widget">
+        <div class="savings-widget-title">
+    <div class="pull-left weather-location-name mod-overlay js-weather-location">Bunkeflostrand</div>
+
+      <div class="pull-right">
+        <span class="icon-sw-info-200 u-text-red premium-overlay-toggle js-overlay-toggle"></span>
+      </div>
+  </div>
+
+
+      <solarweb-weather-widget class="js-weather-widget"></solarweb-weather-widget>
+
+        <div class="loading-progress mod-widget js-weather-widget-loading">
+    <div class="loading-progress-item1"></div>
+    <div class="loading-progress-item2"></div>
+    <div class="loading-progress-item3"></div>
+    <div class="loading-progress-item4"></div>
+  </div>
+
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-lg-8 pvsystem-widget-container mod-weather-widget mod-loading js-weather-widget-overlay-container hidden">
+    <div class="widget fill-parent mod-pvsystem-widget">
+      <div class="savings-widget-title mod-premium">
+        <div class="pull-left premium-overlay-title">Ny Premium-funktion</div>
+        <div class="pull-right">
+          <span class="icon-sw-closebtn close-overlay js-overlay-toggle"></span>
+        </div>
+      </div>
+
+      <div class="preview-background"></div>
+
+      <solarweb-weather-widget class="js-weather-widget"></solarweb-weather-widget>
+
+        <div class="loading-progress mod-widget js-weather-widget-loading">
+    <div class="loading-progress-item1"></div>
+    <div class="loading-progress-item2"></div>
+    <div class="loading-progress-item3"></div>
+    <div class="loading-progress-item4"></div>
+  </div>
+
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+  </div>
+</div>
+
+  <div class="js-meteo-wizard-template">
+  </div>
+
+
+
+
+</div>
+
+<!-- Footer -->
+<div class="layout-footer js-footer">
+  <div class="layout-goto-top">
+    <div class="u-center u-max-page-width row">
+      <div class="hidden-xs hidden-sm col-md-8">
+        
+  
+<div class="bread-crumb-nav js-bread-crumb-nav">
+    <div class="bread-crumb">
+      <ul class="nav nav-pills">
+        
+  
+  <li><a href="/PvSystems/Widgets">Mina anl&#228;ggningar</a></li><li><div class='bread-crumb-separator'>&#155;</div></li><li><p>Hemma</p></li>
+
+
+      </ul>
+    </div>
+
+  </div>
+
+
+      </div>
+      <div class="col-xs-12 col-md-4" style="padding: 12px 19px 2px 12px;">
+        <a  class="page-scroll" href="#page-top">
+          <span class="goto-top-text">G&#229; l&#228;ngst upp</span>
+          <span class="goto-top-arrow"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="u-bg-footer">
+    <div class="u-center u-max-page-width row">
+      
+
+<div class="col-xs-12 col-md-3 footer-container" >
+  <div class="footer-header">
+    <a class="js-toggle">Nedladdningar</a>
+  </div>
+  <ul id="downloads" class="footer-list js-footer-collapse">
+    <li>
+      <span class="label label-primary">NEW</span>
+      <a  target="_blank" href="https://play.google.com/store/apps/details?id=com.fronius.solarweb">Solar.web App - Android</a>
+    </li>
+    <li>
+      <span class="label label-primary">NEW</span> 
+      <a  target="_blank" href="https://apps.apple.com/at/app/id1528302827">Solar.web App - iOS</a>
+    </li>
+    <li>
+      <span class="label label-primary">NEW</span>
+      <a  target="_blank" href="https://play.google.com/store/apps/details?id=com.fronius.solarstart">Solar.start App - Android</a>
+    </li>
+    <li>
+      <span class="label label-primary">NEW</span> 
+      <a  target="_blank" href="https://apps.apple.com/at/app/solar-start/id1509399310">Solar.start App - iOS</a>
+    </li>
+    
+  </ul>
+</div>
+
+<div class="col-xs-12 col-md-3 footer-container" >
+  <div class="footer-header">
+    <a class="js-toggle">Fronius-tj&#228;nster</a>
+  </div>
+  <ul id="services" class="footer-list js-footer-collapse">
+    <li>
+      <a  target="_blank" href="https://solartv.solarweb.com/">Fronius Solar.TV</a>
+    </li>
+    <li>
+      <a  target="_blank" href="https://www.fronius.com/se-references">Referenslista</a>
+    </li>
+    <li>
+      <a  target="_blank" href="https://www.fronius.com/fsp-search">Hitta installat&#246;rer</a>
+    </li>
+    <li>
+      <a  target="_blank" href="https://fronius.solarconfigurator.de/solar.configurator/quick?login=true">Fronius Solar.Configurator</a>
+    </li>
+
+
+    <li>
+      <a  href="/Home/PremiumInfo">Solar.web Premium</a>
+    </li>
+    <li>
+      <a  href="/ProductRegistration/Info">Fronius Garanti</a>
+    </li>
+
+
+    <li>
+      <a  target="_blank" href="https://www.fronius.com/solarweb-faq">FAQs</a>
+    </li>
+  </ul>
+</div>
+
+<div  class="col-xs-12 col-md-3 footer-container">
+  <div class="footer-header">
+    <a class="js-toggle">Kontakter</a>
+  </div>
+  <ul id="contact" class="footer-list js-footer-collapse">
+    <li>
+      <a  target="_blank" href="https://www.fronius.com/en/contact">Kontakt</a>
+    </li>
+    <li>
+      <a  href="/Home/TermsAndConditions">Anv&#228;ndningsvillkor</a>
+    </li>
+    <li>
+      <a  href="/Home/Imprint">F&#246;rl&#228;ggare</a>
+    </li>
+    <li>
+      <a  href="https://www.fronius.com/en/data-privacy-statement" target="_blank">Dataskyddsf&#246;rklaring</a>
+    </li>
+    <li>
+      <a  href="https://www.fronius.com/en/cookie-policy/cookie-policy-solarweb" target="_blank">Cookie Policy</a>
+    </li>
+  </ul>
+</div>
+
+<div  class="col-xs-12 col-md-3 footer-container">
+  <div class="footer-header">
+    <a class="js-toggle">Sociala medier</a>
+  </div>
+  <ul id="social" class="footer-list js-footer-collapse">
+    <li>
+      <a  href="https://www.fronius.com/solar-facebook" target="_blank"><span class="social social-facebook" style="font-size: 20px; margin-right: 10px; margin-bottom: 5px"></span>Facebook</a>
+    </li>
+    <li>
+      <a  href="https://www.fronius.com/solar-instagram" target="_blank"><span class="social social-instagram" style="font-size: 20px; margin-right: 10px; margin-bottom: 5px"></span>Instagram</a>
+    </li>
+    <li>
+      <a  href="https://www.fronius.com/solar-twitter" target="_blank"><span class="social social-twitter" style="font-size: 20px; margin-right: 10px; margin-bottom: 5px"></span>Twitter</a>
+    </li>
+    <li>
+      <a  href="https://www.fronius.com/solar-youtube" target="_blank"><span class="social social-youtube" style="font-size: 20px; margin-right: 10px"></span>YouTube</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+
+  <div class="u-bg-extra-dark">
+    <div class="u-center u-max-page-width row">
+      
+<div class="col-xs-9 layout-footer-copyright">
+  <a  target="_blank" href="https://www.fronius.com/en">&copy; Fronius International GmbH</a>
+</div>
+<div  class="col-xs-3 layout-footer-version">3.13.11.0</div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+    SOLARWEB_CLIENT_ENVIRONMENT = { GlobalScriptResources };
+  </script>
+
+
+
+  
+  
+  
+  
+  <script src="/dist/2220.6fb671a3458117133218.bundle.js"></script><script src="/dist/8494.4782508d5e25be088631.bundle.js"></script><script src="/dist/7432.0402183578545db50e81.bundle.js"></script><script src="/dist/8.90b960a2a101ac811870.bundle.js"></script><script src="/dist/8840.a9425b8528b28e5a089d.bundle.js"></script><script src="/dist/4814.4ed495be8aada3cc9d79.bundle.js"></script><script src="/dist/2651.d12ff36686f6ed51f256.bundle.js"></script><script src="/dist/7174.d5a0bc07d96dca6fa326.bundle.js"></script><script src="/dist/4579.13a6636d1ab9a4bb873c.bundle.js"></script><script src="/dist/PvSystems_PvSystem.3b6605c02cbb52ccac34.bundle.js"></script> <script>(function() { window["ViewBundle"] = __solarweb_PvSystems_PvSystem; })();</script>
+
+  
+<script src="/node_modules/@fronius-se/weather-widget/www/build/solarweb-weather-widget.js?v=OH_812TMjafyvOAKCRYxMGPVg2" nomodule></script>
+<script src="/node_modules/@fronius-se/weather-widget/www/build/solarweb-weather-widget.esm.js?v=OH_rciDFFpRT3QvLnlKLF3C-w2" type="module"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    const weatherWidgetConfig = {
+      strExpectedYield: "Förväntad avkastning",
+      assetsDir: "/node_modules/@fronius-se/weather-widget/dist/collection/assets",
+      locale: "sv"
+    };
+
+    const initWeatherWidget = ViewBundle.configureWeatherWidget(weatherWidgetConfig, { errorLoadingData: "Fel vid laddning av data." });
+    const weatherWidgetContainer = $(".js-weather-widget-container");
+
+    const isPublicDisplayMode = false;
+    if (isPublicDisplayMode) {
+      initWeatherWidget(weatherWidgetContainer, "/PvSystems/GetWeatherWidgetData?pvSystemId=76727fec-2741-408c-b167-14da5f415e50", 84600);
+    } else {
+      initWeatherWidget(weatherWidgetContainer, "/PvSystems/GetWeatherWidgetData?pvSystemId=76727fec-2741-408c-b167-14da5f415e50");
+    }
+
+    const overlayAvailable = true;
+    if (overlayAvailable) {
+      var overlayContainer = $(".js-weather-widget-overlay-container");
+      $(".js-overlay-toggle").on("click", function() {
+        overlayContainer.toggleClass("hidden");
+        weatherWidgetContainer.toggleClass("hidden");
+
+        initWeatherWidget(overlayContainer, "/PvSystems/GetStaticWeatherWidgetData");
+      });
+    }
+  });
+</script>
+  
+<script>
+  $(function(){
+    const config = {
+      chartDataUrl: "/Chart/GetWidgetChart?pvSystemId=76727fec-2741-408c-b167-14da5f415e50",
+      isH24TimeFormat: false,
+      numberDecimalSeparator: ",",
+      olsonTz: "Europe/Berlin",
+      isPublicDisplay: false
+    };
+
+    const strings = {
+      errorWhileLoadingChartData: "Fel vid inl&#228;sning av diagramdata.",
+      feedIn: "Inmatning",
+      infoSystemLivePlot: "Effektbalans vid inmatningspunkten. I det &#246;vre omr&#229;det visas den energi som inmatas i det offentliga n&#228;tet (gult). I det nedre omr&#229;det visas den energi som tas fr&#229;n det offentliga n&#228;tet (gr&#229;).",
+      lastUpdate: "Senaste uppdateringen",
+      noData: "Inga data tillg&#228;ngliga",
+      performanceOfPvSystem: "Anl&#228;ggningens effektf&#246;rlopp",
+      production: "Produktion",
+      usage: "Täckning"
+    };
+
+    ViewBundle.configureEnergyBalanceChart($(".js-energyflowchart-container"), config, strings);
+  });
+</script>
+
+
+  
+  <script type="text/javascript">
+    (function() {
+      const widget = ViewBundle.configureEnergyFlowWidget({
+        container: $('.js-live-data-widget'),
+        realtimePageUrl: "/PvSystems/Realtime?pvSystemId=76727fec-2741-408c-b167-14da5f415e50",
+        realtimeDataUrl: "/ActualData/GetCompareDataForPvSystem?pvSystemId=76727fec-2741-408c-b167-14da5f415e50",
+        imagePath: "/node_modules/@fronius-se/energy-flow-widgets/dist/images",
+        peakPower: 12500,
+        lang: "sv",
+        enableDetailsOverlay: true,
+        hasGen24Inverter: false,
+        overlayShownAnalyticsUrl: "/Analytics/SubmeterOverlayShown",
+        overlayPossibleAnalyticsUrl: "/Analytics/SubmeterOverlayPossible",
+        pvSystemId: "76727fec-2741-408c-b167-14da5f415e50"
+      });
+      $(() => widget.updateFromServer());
+    })()
+  </script>
+
+    <script>
+      $(function() {
+        ViewBundle.configureInlineMessageDisplay();
+      });
+    </script>
+  <script type="text/javascript">
+    $(function() {
+      ViewBundle.initAndStartAutomaticSwipers();
+      ViewBundle.configureCampaignWidgets($(".js-campaign-widget"));
+
+      $(".js-energy-balance-help-text").on("click", function(e) {
+        e.stopPropagation();
+      });
+
+      $('.js-energyflowchart-container')
+        .on('click',
+          function() {
+            window.location.href = '/Chart/Chart?pvSystemId=76727fec-2741-408c-b167-14da5f415e50';
+          });
+
+      $('.js-pvs-image-container')
+        .on('click',
+          function() {
+            window.location.href = '/PvSystemSettings/UploadImage?pvSystemId=76727fec-2741-408c-b167-14da5f415e50';
+          });
+    });
+  </script>
+
+
+
+  <script>(() => window['LayoutContentExports'] = window['__solarweb_global-layout-exports__Layout-content'])()</script>
+
+
+<script>
+  LayoutContentExports["Promise_MeteoProWizard"]
+    .then(init)
+    .then(loadBootstrapSelectLocalisation)
+    .catch(e => console.error("Failed to lazy-load MeteoProWizard", e));
+
+  function loadBootstrapSelectLocalisation(mpw){   
+      
+      const tag  = document.createElement("script");
+      tag.src = "/node_modules/bootstrap-select/dist/js/i18n/defaults-sv_SE.js?v=OH_SVyWHxBCGYtr99ZditURuQ2";
+      document.body.appendChild(tag);
+      
+    return mpw;
+  }
+
+  function init(mpw) {
+    var MeteoProWizard = mpw
+    var wizardType = "SuspendedWizard";
+
+    var meteoPro = new MeteoProWizard.MeteoProSelection(
+      [
+        {
+          content: $(".js-mps-wizard-0"),
+          title: "",
+          cancelAction: "remind_later",
+          okAction: "begin",
+          screentype: "start"
+        },
+        {
+          content: $(".js-mps-wizard-1"),
+          title: "Viktig information",
+          cancelAction: "none",
+          okAction: "acknowledge",
+          screentype: "content"
+        },
+        {
+          content: $(".js-mps-wizard-2"),
+          title: "V&#228;lj en anl&#228;ggning",
+          cancelAction: "back",
+          okAction: "fetchData",
+          screentype: "content"
+        },
+        {
+          content: $(".js-mps-wizard-3"),
+          title: "Kontrollera platsen",
+          cancelAction: "back",
+          okAction: "next",
+          screentype: "content"
+        },
+        {
+          content: $(".js-mps-wizard-4"),
+          title: "Prognosparametrar",
+          cancelAction: "back",
+          okAction: "createSummary",
+          screentype: "content"
+        },
+        {
+          content: $(".js-mps-wizard-5"),
+          title: "Sammanfattning",
+          cancelAction: "back",
+          okAction: "save",
+          screentype: "content"
+        }
+      ],
+      {
+        saveUrl: "/UserSettings/SaveMeteoProData",
+        fetchPvSystemsUrl: "/UserSettings/GetSelectablePvSystems",
+        fetchSelectedPvSystemUrl: "/UserSettings/GetSelectedPvSystem",
+        dismissWizardUrl: "/DismissedUserNotifications/AddEnMetWizard",
+        dismissableWizardParameter: {
+          meteoWizardType:
+            "SuspendedWizard"
+        },
+        strings: {
+          remindLater: "Kom ih&#229;g senare",
+          begin: "St&#228;ll in nu",
+          back: "Tillbaka",
+          next: "N&#228;sta",
+          save: "Avsluta",
+          finish: "OK",
+          fetchData: "N&#228;sta",
+          acknowledge: "Godk&#228;nn",
+          pleaseSelect: "Välj",
+          noPvSystems: "Det har inte lagrats några solcellsanläggningar för denna inloggning."
+        }
+      },
+      {
+        north: "Nord",
+        northEast: "Nordost",
+        east: "&#214;ster",
+        southEast: "Sydost",
+        south: "S&#246;der",
+        southWest: "Sydv&#228;st",
+        west: "V&#228;ster",
+        northWest: "Nordv&#228;st"
+      },
+      {
+        cookie: {
+          name: "MeteoProSelection__RemindLater_3c609c5a-4ebf-4043-874a-aa1b00e38338",
+          lifetimeInDays: 3
+        }
+      });
+
+    var meteoNoPro = new MeteoProWizard.MeteoSelectionNoPro(
+      [
+        {
+          content: $(".js-ms-wizard-0"),
+          title: "",
+          cancelAction: "infolink",
+          okAction: "redirect",
+          screentype: "start"
+        }
+      ],
+      {
+        saveUrl: "/WebShop/GoToShop?entryPoint=Premium",
+        infolinkUrl: "/Home/PremiumInfo",
+        dismissWizardUrl: "/DismissedUserNotifications/AddEnMetWizard",
+        dismissableWizardParameter: {
+          meteoWizardType:
+            "SuspendedWizard"
+        },
+        strings: {
+          infolink: "Mer information",
+          redirect: "Bli Premium-medlem"
+        }
+      },
+      {
+        cookie: {
+          name: "MeteoSelectionNoPro__RemindLater",
+          lifetimeInDays: 14
+        }
+      });
+
+    var meteoRenew = new MeteoProWizard.MeteoRenew([
+        {
+          content: $(".js-mps-wizard-0"),
+          title: "",
+          cancelAction: "redirect",
+          okAction: "finish",
+          screentype: "start"
+        }
+      ],
+      {
+        renewMeteoProUrl: "/PvSystems/ExtendMeteoPro",
+        renewPvSystemId: "00000000-0000-0000-0000-000000000000",
+        strings: {
+          redirect: "V&#228;lj en annan solcellsanl&#228;ggning",
+          finish: "F&#246;rl&#228;ng"
+        }
+      },
+      {
+        cookie: {
+          name: "MeteoRenew__RemindLater_3c609c5a-4ebf-4043-874a-aa1b00e38338",
+          lifetimeInDays: 3
+        }
+      },
+      meteoPro
+    );
+
+    var meteoAutoRenew = new MeteoProWizard.MeteoAutoRenew([
+        {
+          content: $(".js-mps-wizard-0"),
+          title: "",
+          cancelAction: "none",
+          okAction: "finish",
+          screentype: "start"
+        }
+      ],
+      {
+        renewMeteoProUrl: "/PvSystems/ExtendMeteoPro",
+        renewPvSystemId: "00000000-0000-0000-0000-000000000000",
+        strings: {
+          finish: "F&#246;rl&#228;ng"
+        }
+      },
+      {
+        cookie: {
+          name: "MeteoAutoRenew__RemindLater_3c609c5a-4ebf-4043-874a-aa1b00e38338",
+          lifetimeInDays: 3
+        }
+      }
+    );
+
+    if (wizardType === "ProWizard" && !meteoPro.isRemindDelayActive()) {
+      meteoPro.openWizard();
+    } else if (wizardType === "NoProWizard" && !meteoNoPro.isRemindDelayActive()) {
+      meteoNoPro.openWizard();
+    } else if (wizardType === "RenewWizard" && !meteoRenew.isRemindDelayActive()) {
+      meteoRenew.openWizard();
+    } else if (wizardType === "AutoRenewWizard" && !meteoAutoRenew.isRemindDelayActive()) {
+      meteoAutoRenew.openWizard();
+    }
+
+    $(".js-start-meteo-wizard").on("click", function() {
+      if (wizardType === "ProWizard" ||
+        wizardType === "SuspendedWizard" ||
+        (wizardType === "RenewWizard" && meteoRenew.redirectToMeteoProPerformed())) {
+        meteoPro.openWizard();
+      } else if (wizardType === "RenewWizard" && !meteoRenew.redirectToMeteoProPerformed()) {
+        meteoRenew.openWizard();
+      } else if (wizardType === "AutoRenewWizard") {
+        meteoAutoRenew.openWizard();
+      }
+    });
+    
+    return mpw;
+  }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR6qPzcNLa8nCte3gKkuJRHmMch0b0CJU"></script>
+      <script>
+        $(function() {
+          LayoutContentExports.initMessages(
+            "/Messages/GetUnreadMessages",
+            "/Messages/MarkMessageAsRead",
+            "/Messages/GetUnreadMessageCountForUser"
+          );
+        });
+    </script>
+
+
+
+<script type="text/javascript">
+  GlobalAjaxSetup.helpers.LayoutAdaptions.init({ strings: { more: "Mer" } });
+
+  (function doGlobalAjaxSetup() {
+    var setup = GlobalAjaxSetup.self;
+    var setupUtils = GlobalAjaxSetup.utils;
+    var helpers = GlobalAjaxSetup.helpers;
+    
+    var userLockedUrl = "/Account/UserLocked?ReturnUrl=%2FPvSystems%2FPvSystem%3FpvSystemId%3D76727fec-2741-408c-b167-14da5f415e50&UserName=dan%40miomi.se";
+    var sessionExpiredUrl = "/Account/ExternalLogin?ReturnUrl=%2FPvSystems%2FPvSystem%3FpvSystemId%3D76727fec-2741-408c-b167-14da5f415e50&UserName=dan%40miomi.se";
+
+    function onServerError(event, jqXhr, settings) {
+      if (setupUtils.isRequestHandled(jqXhr)) {
+        return;
+      }
+      var data;
+      var dialogCssClass = "js-server-error-dialog";
+      try {
+        data = JSON.parse(jqXhr.responseText)["error"];
+        if (data == null)
+          throw "no data";
+      }
+      catch (e) {
+        data = { message: "Det uppstod ett fel (" + jqXhr.status + " - " + jqXhr.statusText + ")" };
+      }
+
+      if (helpers.Dialog.isAnyOpenOfClass(dialogCssClass))
+        return;
+
+      helpers.Dialog.create(data.title || "Fel",
+        data.message,
+        {
+          context: "danger",
+          cssClasses: dialogCssClass,
+          buttons: [helpers.Dialog.createOkButton()]
+        });
+    }
+
+    function onSessionExpired() {
+      window.location = sessionExpiredUrl;
+    }
+
+    function onUserLocked() {
+      window.location = userLockedUrl;
+    }
+
+    function onAccessForbidden() {
+      helpers.MessageBox.create("Tillg&#229;ng avvisades", "Du har ingen r&#228;ttighet till den h&#228;r sidan.",
+        { context: "danger" });
+    }
+
+    function maybeShowUserNotification(responseJson) {
+      if (responseJson.dataType === "UserNotificationPermanent") {
+        helpers.MessageBox.create("Information", responseJson.data.message,
+          { context: responseJson.data.type });
+      }
+      if (responseJson.dataType === "UserNotification") {
+        $.notify({ message: responseJson.data.message }, { type: responseJson.data.type });
+      }
+    }
+
+    setup.attachServerErrorHandler(onServerError);
+
+    // Code 0 happens if browser cancels request e.g. due to network failure or security restrictions (CORS, Mixed content, ...)
+    // User abort of a request also results in code 0, but that is filtered in GlobalAjaxSetup already 
+    // (we don't want error message if request was cancelled on purpose).
+    setup.attachHandler(0, function (event, jqXhr, settings) {
+      // Only show message if the failed request is not a GET request (or determination of request type fails):
+      // Many GET requests occur in the background and are executed every x seconds, so they are automatically repaired when error is resolved.
+      // In this case, showing an error message (which the user has to dismiss) does more harm than good.
+      // Especially since most GET requests are for components which have their own means of indicating errors.
+      // NOTE: The above is also true for other status codes like 500, but we had the setup for those for quite some time and I don't want to change it now.
+      //       Before SOLWEB-5536, we did not show anything for status code 0, hence we had no issues with e.g. error messages on connection loss.
+      //       This restores the old behavior for GET requests, keeping the new behavior for all others.
+      if(settings.type && settings.type.toUpperCase() === "GET")
+        return;
+      else {
+        // For other request types, it is likely that the user did something to initiate the request, so an error message makes sense
+        onServerError(event, jqXhr, settings);
+      }      
+    });
+
+    setup.attachHandler(419, onSessionExpired);
+    setup.attachHandler(420, onUserLocked);
+    setup.attachHandler(403, onAccessForbidden);
+    setup.attachHandler(422,
+      function (event, jqXhr, settings) {
+        if (setupUtils.isRequestHandled(jqXhr))
+          return;
+
+        var maybeError = helpers.tryGetJsonError(jqXhr);
+        if (maybeError) {
+          $.notify({ message: maybeError.message }, { type: "danger" });
+          setupUtils.markRequestHandled(jqXhr);
+        }
+      });
+    setup.attachHandler(401, onAccessForbidden);
+    setup.attachHandler(200,
+      function (event, jqXhr, settings) {
+        if (!jqXhr.responseJSON)
+          return;
+
+        maybeShowUserNotification(jqXhr.responseJSON);
+      });
+  })();
+</script>
+
+
+
+<script>
+    $(function setupPwa() {
+      if (!("serviceWorker" in navigator)) {
+        return;
+      }
+
+      function onError(e) {
+        console.error("Error while registering service worker", e);
+      }
+
+      try {
+        navigator.serviceWorker
+          .register("/serviceworker.js")
+          .catch(onError);
+      } catch (e) {
+        onError(e);
+      }
+    });
+  </script>
+
+</body>
+</html>

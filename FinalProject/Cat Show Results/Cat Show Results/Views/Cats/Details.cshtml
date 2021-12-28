@@ -1,0 +1,76 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model Cat_Show_Results.Models.Cat
+@inject SignInManager<IdentityUser> SignInManager
+
+@{
+    ViewData["Title"] = "Cat Details";
+}
+
+<h4>Cat Details</h4>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Number)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Number)
+        </dd>
+@if (@User.IsInRole("Admin"))
+{
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd> 
+}
+        <dt class = "col-sm-2">
+            Breed Name
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BreedName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EMS)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EMS)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Sex)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sex)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Born)
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.Born.ToShortDateString()
+        </dd>
+        <dt class = "col-sm-2">
+            Class
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ClassNr)
+            @ViewBag.Class.ClassName
+            (@ViewBag.Class.Certificate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Category)
+            (@ViewBag.Category)
+        </dd>
+    </dl>
+</div>
+<div>
+@if (@User.IsInRole("Admin"))
+    {
+        <a asp-action="Edit" asp-route-id="@Model.CatId">Edit | </a>
+              }
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,81 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<Cat_Show_Results.Models.Ticket>
+@inject SignInManager<IdentityUser> SignInManager
+
+@{
+    ViewData["Title"] = "Results List";
+}
+
+<h4>Results List</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Catalog Number</th>
+            <th>Type</th>
+            <th>Head</th>
+            <th>Eyes</th>
+            <th>Ears</th>
+            <th>Fur</th>
+            <th>Tail</th>
+            <th>Condition</th>
+            <th>General</th>
+            <th>Result</th>
+            <th>Judge Name</th>
+            <th colspan=3></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) 
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CatNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Head)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Eyes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ears)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fur)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Condition)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.General)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Result)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JudgeName)
+        </td>
+        <td width="40">
+            <a asp-controller="Tickets" asp-action="Details" asp-route-id="@item.TicketId">Details</a>
+        </td>
+        <td width="40">
+    @if (SignInManager.IsSignedIn(User))
+        {
+           <a asp-controller="Tickets" asp-action="Edit"     asp-route-id="@item.TicketId">Edit</a>
+        }
+        </td>
+        <td width="40">
+    @if (@User.IsInRole("Admin"))
+        {
+           <a asp-controller="Tickets" asp-action="Delete"   asp-route-id="@item.TicketId">Delete</a>
+        }
+        </tr>
+    }
+    </tbody>
+</table>

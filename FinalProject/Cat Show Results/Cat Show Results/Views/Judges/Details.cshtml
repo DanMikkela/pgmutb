@@ -1,0 +1,52 @@
+﻿@model Cat_Show_Results.Models.Judge
+
+@{
+    ViewData["Title"] = "Judge Details";
+}
+
+<div>
+    <h4>Judge Details</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Category1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Category1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Category2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Category2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Category3)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Category3)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Category4)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Category4)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.JudgeId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

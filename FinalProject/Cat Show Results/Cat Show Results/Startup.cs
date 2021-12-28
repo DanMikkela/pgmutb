@@ -29,14 +29,9 @@ namespace Cat_Show_Results
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddScoped<IBreedRepository, BreedRepository>();
-            services.AddScoped<IClassRepository, ClassRepository>();
-            services.AddScoped<ICatRepository, CatRepository>();
-            services.AddScoped<IJudgeRepository, JudgeRepository>();
-            services.AddScoped<ITicketRepository, TicketRepository>();
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-
+                .AddRoles<IdentityRole>()   
                 .AddEntityFrameworkStores<AppDbContext>();
 
         }

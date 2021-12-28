@@ -1,0 +1,32 @@
+﻿@using Cat_Show_Results.Areas.Identity.Pages.Account.Manage
+@{
+    ViewData["Title"] = "System Administration";
+}
+
+<h4>System Administration</h4>
+<div class="container">
+    <ul class="nav navbar-nav">
+        <li><a class="nav-link" asp-controller="Judges"     asp-action="Index">Judges</a></li>
+        <li><a class="nav-link"> </li>
+        <li><a class="nav-link" asp-controller="Classes"    asp-action="Index">Classes</a></li>
+        <li><a class="nav-link" asp-controller="Categories" asp-action="Index">Categories</a></li>
+        <li><a class="nav-link" asp-controller="Breeds"     asp-action="Index">Breeds</a></li>
+        <li><a class="nav-link"> </li>
+        <li><a class="nav-link" asp-controller="Cats"       asp-action="Index">Cats</a></li>
+        <li><a class="nav-link"> </li>
+        <li><a class="nav-link" asp-controller="Tickets"    asp-action="Index">Tickets</a></li>
+        <li><a class="nav-link" asp-controller="Results"    asp-action="Index">Results</a></li>
+        <li><a class="nav-link"> </li>
+        <li><a class="nav-link" asp-controller="Roles"      asp-action="Index">Roles Management</a></li>
+        <li><a class="nav-link" asp-controller="Users"      asp-action="Index">Users List</a> </li>
+        <li><a class="nav-link" asp-area="Identity" asp-page="/Account/Register">Register New User</a></li>
+        <li><a class="nav-link"> </li>
+        <li><a class="nav-link"> </li>
+        <li><a class="nav-link"> </li>
+        <li><a class="nav-link"> </li>
+        <li><a class="nav-link"> </li>
+        <li><a class="nav-link"> </li>
+        <li><a class="nav-link"> </li>
+    </ul>
+</div>
+

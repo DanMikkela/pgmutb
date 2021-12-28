@@ -1,0 +1,54 @@
+﻿@using Cat_Show_Results.ViewModels
+@model Cat
+<div class=flex-column>
+    <table width="350">
+        <tr width="100">
+            <td>Number</td>
+            <td>
+                @Model.Number
+            </td>
+        </tr>
+@*        <tr>
+            <td>Name</td>
+            <td>
+                @Model.Name
+            </td>
+        </tr>
+*@        <tr>
+            <td>Breed</td>
+            <td>
+                @Model.BreedName
+            </td>
+        </tr>
+        <tr>
+            <td>EMS</td>
+            <td>
+                @Model.EMS
+            </td>
+        </tr>
+        <tr>
+            <td>Sex</td>
+            <td>
+                @Model.Sex
+            </td>
+        </tr>
+        <tr>
+            <td>Born</td>
+            <td>
+                @Model.Born.ToShortDateString()
+            </td>
+        </tr>
+        <tr>
+            <td>Class</td>
+            <td>
+                @Model.ClassNr (@ViewBag.Titel)
+            </td>
+        </tr>
+        <tr>
+            <td>Breed</td>
+            <td>
+                @ViewBag.Breed
+            </td>
+        </tr>
+    </table>
+</div>

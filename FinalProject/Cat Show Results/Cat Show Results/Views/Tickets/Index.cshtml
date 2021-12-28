@@ -1,0 +1,47 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<Cat_Show_Results.Models.Ticket>
+@inject SignInManager<IdentityUser> SignInManager
+
+@{
+    ViewData["Title"] = "Tickets List";
+}
+
+<h4>Available Tickets</h4>
+
+@if (@User.IsInRole("Admin"))
+{
+    <p><a asp-action="Create">Create New</a></p>
+    <p><a asp-controller="Systems" asp-action="Index">Back to Admin</a></p> 
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Judge Name
+            </th>
+            <th>
+                Catalog Number
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.JudgeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cat.Number)
+            </td>
+            <td>
+            @if (@User.IsInRole("Admin"))
+            {
+                <a asp-action="Edit"   asp-controller="Tickets" asp-route-id="@item.TicketId">Edit</a>
+                <a asp-action="Delete" asp-route-id="@item.TicketId">Delete</a>
+            }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,173 @@
+﻿@using Cat_Show_Results.ViewModels
+@model Ticket
+
+@{
+    ViewData["Title"] = "Edit Ticket";
+}
+
+
+<h4>Edit Ticket</h4>
+    <hr />
+<table width="100%">
+    <tr>
+        <td width="15%"></td>
+        <td width="85%"></td>
+    </tr>
+    <tr>
+        <td valign="top">
+            <partial name="_CatCard" model="@ViewBag.Cat"  />
+        </td>
+        <td>
+            <div>
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="TicketId" />
+                    <input type="hidden" asp-for="CatId" />
+                    <input type="hidden" asp-for="CatNumber" value=@Model.CatNumber />
+                    <input type="hidden" asp-for="HaveResult" value=@Model.HaveResult />
+
+                    <table style="width:740px" border=1  >
+                        <tr>
+                            <td style="width:40px">Type</td>
+                            <td width=600px>
+                                <textarea id="Type" asp-for="Type"></textarea>
+                                <span asp-validation-for="Type" class="text-danger"></span>
+                            </td>
+                            <td style="width:100px">
+                                <p><a onclick="exType()" style="text-decoration:underline">EX. </a></p>
+                                <p><a onclick="formType()" style="text-decoration:underline">form </a></p>
+                            </td>
+                        </tr><tr>
+                            <td style="width:40px">Head</td>
+                            <td style="width:600px">
+                                <textarea id="Head" asp-for="Head"></textarea>
+                                <span asp-validation-for="Head" class="text-danger"></span>
+                            </td>
+                            <td style="width:100px">
+                                <p><a onclick="exHead()" style="text-decoration:underline">EX. </a></p>
+                                <p><a onclick="formHead()" style="text-decoration:underline">form </a></p>
+                            </td>
+                        </tr><tr>
+                            <td style="width:40px">Eyes</td>
+                            <td style="width:600px">
+                                <textarea id="Eyes" asp-for="Eyes"></textarea>
+                                <span asp-validation-for="Eyes" class="text-danger"></span>
+                             </td>
+                            <td style="width:100px">
+                                <p><a onclick="exEyes()" style="text-decoration:underline">EX. </a></p>
+                                <p><a onclick="formEyes()" style="text-decoration:underline">form </a></p>
+                            </td>
+                        </tr><tr>
+                            <td style="width:40px">Ears</td>
+                            <td style="width:600px">
+                                <textarea id="Ears" asp-for="Ears"></textarea>
+                                <span asp-validation-for="Ears" class="text-danger"></span>
+                            </td>
+                            <td style="width:100px">
+                                <p><a onclick="exEars()" style="text-decoration:underline">EX. </a></p>
+                                <p><a onclick="formEars()" style="text-decoration:underline">form </a></p>
+                            </td>
+                        </tr><tr>
+                            <td style="width:40px">Fur</td>
+                            <td style="width:600px">
+                                <textarea id="Fur" asp-for="Fur"></textarea>
+                                <span asp-validation-for="Fur" class="text-danger"></span>
+                            </td>
+                            <td style="width:100px">
+                                <p><a onclick="exFur()" style="text-decoration:underline">EX. </a></p>
+                                <p><a onclick="textFur()" style="text-decoration:underline">form </a></p>
+                            </td>
+                        </tr><tr>
+                            <td style="width:40px">Tail</td>
+                            <td style="width:600px">
+                                <textarea id="Tail" asp-for="Tail"></textarea>
+                                <span asp-validation-for="Tail" class="text-danger"></span>
+                            </td>
+                            <td style="width:100px">
+                                <p><a onclick="exTail()" style="text-decoration:underline">EX. </a></p>
+                                <p><a onclick="shortTail()" style="text-decoration:underline">short </a></p>
+                                <p><a onclick="longTail()" style="text-decoration:underline">long </a></p>
+                            </td>
+                        </tr><tr>
+                            <td style="width:40px">Condition</td>
+                            <td style="width:600px">
+                                <textarea id="Condition" asp-for="Condition"></textarea>
+                                <span asp-validation-for="Condition" class="text-danger"></span>
+                            </td>
+                            <td style="width:100px">
+                                <p><a onclick="exCond()" style="text-decoration:underline">EX. </a></p>
+                            </td>
+                        </tr><tr>
+                            <td style="width:40px">General</td>
+                            <td style="width:600px">
+                                <textarea id="General" asp-for="General"></textarea>
+                                <span asp-validation-for="General" class="text-danger"></span>
+                            </td>
+                            <td style="width:100px">
+                                <p><a onclick="exGen()" style="text-decoration:underline">EX. </a></p>
+                            </td>
+                        </tr><tr>
+                            <td style="width:40px">Result</td>
+                            <td style="width:600px">
+                            <select asp-for="Result" asp-items="@(List<SelectListItem>)(@ViewData["Certificate"])" class="form-control"></select>
+                                <span asp-validation-for="Result" class="text-danger"></span>
+                            </td>
+                            <td style="width:100px">
+                            </td>
+                        </tr><tr>
+                            <td style="width:40px">Judge</td>
+                            <td style="width:600px">@Model.JudgeName
+                                <input type="hidden" asp-for="JudgeName" value=@Model.JudgeName />
+                                <span asp-validation-for="JudgeName"></span>
+                            <td style="width:100px">
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </td>
+    </tr>
+</table>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<style>
+P { 
+    font-size: .75em;
+    height: .75em;
+    font-weight: bold;
+  }
+textarea {
+    width: 590px;
+}
+A {
+    text-decoration: underline;
+    vertical-align:middle;
+}
+
+</style>
+
+<script>
+function exType() { document.getElementById("Type").innerHTML += " Excellent  "; };
+function exHead() { document.getElementById("Head").innerHTML += " Excellent  "; };
+function exEyes() { document.getElementById("Eyes").innerHTML += " Excellent  "; };
+function exEars() { document.getElementById("Ears").innerHTML += " Excellent  "; };
+function exFur()  { document.getElementById("Fur").innerHTML += " Excellent  "; };
+function exTail() { document.getElementById("Tail").innerHTML += " Excellent  "; };
+function exCond() { document.getElementById("Condition").innerHTML += " Excellent  "; };
+function exGen()  { document.getElementById("General").innerHTML += " Excellent  "; };
+function formType() { document.getElementById("Type").innerHTML += " form "; };
+function formHead() { document.getElementById("Head").innerHTML += " form "; };
+function formEyes() { document.getElementById("Eyes").innerHTML += " form "; };
+function formEars() { document.getElementById("Ears").innerHTML += " form "; };
+function textFur()  { document.getElementById("Fur").innerHTML += " texture "; };
+function shortTail() { document.getElementById("Tail").innerHTML += " Short "; };
+function longTail() { document.getElementById("Tail").innerHTML += " Long "; };
+</script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

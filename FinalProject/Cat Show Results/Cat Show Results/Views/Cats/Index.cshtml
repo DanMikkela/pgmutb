@@ -1,0 +1,57 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<Cat_Show_Results.Models.Cat>
+@inject SignInManager<IdentityUser> SignInManager
+
+@{
+    ViewData["Title"] = "Cats List";
+}
+<h4>Cats List</h4>
+@if (@User.IsInRole("Admin"))
+{
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p> 
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Number</th>
+            <th>Name</th>
+            <th>EMS</th>
+            <th>Sex</th>
+            <th>Class</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.Number
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.EMS
+            </td>
+            <td>
+                @item.Sex
+            </td>
+            <td>
+                @item.ClassNr
+            </td>
+            <td>
+@if (SignInManager.IsSignedIn(User))
+        {
+        }
+            <a asp-action="Details" asp-route-id="@item.CatId">Details</a>
+@if (@User.IsInRole("Admin"))
+        {
+            <a asp-action="Edit"       asp-route-id="@item.CatId">Edit</a>
+            <a asp-action="Delete"     asp-route-id="@item.CatId">Delete</a>
+        }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
